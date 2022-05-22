@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "371392473733",
+    "project_id": "gardeniotubes",
+    "storage_bucket": "gardeniotubes.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:371392473733:android:bf61f1b290e18fd2c457ec",
+        "android_client_info": {
+          "package_name": "com.example.gardenio_tubes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "371392473733-j90r58a1lsresr5dfnnhsjm7m8dqvpef.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0OGxVhKevGsTw21VOynvzHmbmn-W1jVw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "371392473733-j90r58a1lsresr5dfnnhsjm7m8dqvpef.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
