@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:gardenio_tubes/pages/first_screen.dart';
 import 'package:gardenio_tubes/constants.dart';
-import 'package:gardenio_tubes/pages/register_page.dart';
 
-class LoginPage extends StatelessWidget {
+class RegisterPage extends StatefulWidget {
+  static const routeName = "/RegisterPage";
+  @override
+  _RegisterPageState createState() => _RegisterPageState();
+}
+
+class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,16 +16,10 @@ class LoginPage extends StatelessWidget {
         padding: EdgeInsets.all(20.0),
         child: ListView(
           children: <Widget>[
-            Center(
-              child: Column(
-                children: <Widget>[
-                  _iconLogin(),
-                  _titleDescription(),
-                  _textField(),
-                  _buildButton(context),
-                ],
-              ),
-            ),
+            _iconRegistrasi(),
+            _titleDescription(),
+            _textField(),
+            _buildButton(context),
           ],
         ),
       ),
@@ -30,11 +27,11 @@ class LoginPage extends StatelessWidget {
   }
 }
 
-Widget _iconLogin() {
+Widget _iconRegistrasi() {
   return Image.asset(
     "assets/images/logo.png",
-    height: 150.0,
     width: 150.0,
+    height: 150.0,
   );
 }
 
@@ -45,20 +42,17 @@ Widget _titleDescription() {
         padding: EdgeInsets.only(top: 16.0),
       ),
       Text(
-        "Login Into App",
+        "Registrasi",
         style: TextStyle(
           color: Colors.white,
           fontSize: 16.0,
         ),
       ),
-      Padding(
-        padding: EdgeInsets.only(top: 12.0),
-      ),
       Text(
-        "Lorem Ipsum sim amet , lorem ipsum amet",
+        "Lorem Impsum dolar sit amrt lorem ipsum ",
         style: TextStyle(
-          fontSize: 12.0,
           color: Colors.white,
+          fontSize: 12.0,
         ),
         textAlign: TextAlign.center,
       ),
@@ -88,7 +82,7 @@ Widget _textField() {
             ),
           ),
           hintText: "Username",
-          hintStyle: TextStyle(color: ColorPalette.hintColor),
+          hintStyle: TextStyle(color: Colors.white),
         ),
         style: TextStyle(color: Colors.white),
         autofocus: false,
@@ -102,7 +96,7 @@ Widget _textField() {
           enabledBorder: UnderlineInputBorder(
             borderSide: BorderSide(
               color: ColorPalette.underlineTextField,
-              width: 1.5,
+              width: 3.0,
             ),
           ),
           focusedBorder: UnderlineInputBorder(
@@ -111,7 +105,7 @@ Widget _textField() {
               width: 3.0,
             ),
           ),
-          hintText: "Password",
+          hintText: "Passwrod",
           hintStyle: TextStyle(color: ColorPalette.hintColor),
         ),
         style: TextStyle(color: Colors.white),
@@ -122,7 +116,7 @@ Widget _textField() {
   );
 }
 
-Widget _buildButton(BuildContext) {
+Widget _buildButton(BuildContext context) {
   return Column(
     children: <Widget>[
       Padding(
@@ -133,7 +127,7 @@ Widget _buildButton(BuildContext) {
           padding: EdgeInsets.symmetric(vertical: 8.0),
           width: double.infinity,
           child: Text(
-            'Login',
+            'Registrasi',
             style: TextStyle(color: ColorPalette.primaryColor),
             textAlign: TextAlign.center,
           ),
@@ -155,13 +149,13 @@ Widget _buildButton(BuildContext) {
       ),
       FlatButton(
         child: Text(
-          'Register',
+          'Login',
           style: TextStyle(color: Colors.white),
         ),
         onPressed: () {
-          Navigator.pushNamed(BuildContext, RegisterPage.routeName);
+          Navigator.pushNamed(context, "/");
         },
-      ),
+      )
     ],
   );
 }
