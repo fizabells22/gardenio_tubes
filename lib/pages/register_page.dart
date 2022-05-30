@@ -12,7 +12,7 @@ class _RegisterPageState extends State<RegisterPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: ColorPalette.primaryColor,
+        color: primaryColor,
         padding: EdgeInsets.all(20.0),
         child: ListView(
           children: <Widget>[
@@ -71,7 +71,7 @@ Widget _textField() {
           border: UnderlineInputBorder(),
           enabledBorder: UnderlineInputBorder(
             borderSide: BorderSide(
-              color: ColorPalette.underlineTextField,
+              color: underlineTextField,
               width: 1.5,
             ),
           ),
@@ -95,7 +95,7 @@ Widget _textField() {
           border: UnderlineInputBorder(),
           enabledBorder: UnderlineInputBorder(
             borderSide: BorderSide(
-              color: ColorPalette.underlineTextField,
+              color: underlineTextField,
               width: 3.0,
             ),
           ),
@@ -106,7 +106,7 @@ Widget _textField() {
             ),
           ),
           hintText: "Passwrod",
-          hintStyle: TextStyle(color: ColorPalette.hintColor),
+          hintStyle: TextStyle(color: hintColor),
         ),
         style: TextStyle(color: Colors.white),
         obscureText: true,
@@ -128,7 +128,7 @@ Widget _buildButton(BuildContext context) {
           width: double.infinity,
           child: Text(
             'Registrasi',
-            style: TextStyle(color: ColorPalette.primaryColor),
+            style: TextStyle(color: primaryColor),
             textAlign: TextAlign.center,
           ),
           decoration: BoxDecoration(

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gardenio_tubes/pages/login_page.dart';
 import 'package:gardenio_tubes/pages/first_screen.dart';
-import 'package:firebase_core/firebase_core.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

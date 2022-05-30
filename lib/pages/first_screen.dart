@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gardenio_tubes/pages/login_page.dart';
-import 'package:gardenio_tubes/pages/sign_in.dart';
 
 class FirstScreen extends StatelessWidget {
   @override

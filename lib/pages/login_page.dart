@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:gardenio_tubes/pages/first_screen.dart';
 import 'package:gardenio_tubes/constants.dart';
 import 'package:gardenio_tubes/pages/register_page.dart';
@@ -9,7 +8,7 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: ColorPalette.primaryColor,
+        color: primaryColor,
         padding: EdgeInsets.all(20.0),
         child: ListView(
           children: <Widget>[
@@ -77,7 +76,7 @@ Widget _textField() {
           border: UnderlineInputBorder(),
           enabledBorder: UnderlineInputBorder(
             borderSide: BorderSide(
-              color: ColorPalette.underlineTextField,
+              color: underlineTextField,
               width: 1.5,
             ),
           ),
@@ -88,7 +87,7 @@ Widget _textField() {
             ),
           ),
           hintText: "Username",
-          hintStyle: TextStyle(color: ColorPalette.hintColor),
+          hintStyle: TextStyle(color: hintColor),
         ),
         style: TextStyle(color: Colors.white),
         autofocus: false,
@@ -101,7 +100,7 @@ Widget _textField() {
           border: UnderlineInputBorder(),
           enabledBorder: UnderlineInputBorder(
             borderSide: BorderSide(
-              color: ColorPalette.underlineTextField,
+              color: underlineTextField,
               width: 1.5,
             ),
           ),
@@ -112,7 +111,7 @@ Widget _textField() {
             ),
           ),
           hintText: "Password",
-          hintStyle: TextStyle(color: ColorPalette.hintColor),
+          hintStyle: TextStyle(color: hintColor),
         ),
         style: TextStyle(color: Colors.white),
         obscureText: true,
@@ -134,7 +133,7 @@ Widget _buildButton(BuildContext) {
           width: double.infinity,
           child: Text(
             'Login',
-            style: TextStyle(color: ColorPalette.primaryColor),
+            style: TextStyle(color: primaryColor),
             textAlign: TextAlign.center,
           ),
           decoration: BoxDecoration(
