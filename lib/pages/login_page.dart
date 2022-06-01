@@ -6,6 +6,7 @@ import 'package:gardenio_tubes/pages/register_page.dart';
 class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
         color: primaryColor,
@@ -15,6 +16,7 @@ class LoginPage extends StatelessWidget {
             Center(
               child: Column(
                 children: <Widget>[
+                  SizedBox(height: size.height * 0.15),
                   _iconLogin(),
                   _titleDescription(),
                   _textField(),
@@ -121,7 +123,7 @@ Widget _textField() {
   );
 }
 
-Widget _buildButton(BuildContext) {
+Widget _buildButton(BuildContext context) {
   return Column(
     children: <Widget>[
       Padding(
@@ -158,7 +160,10 @@ Widget _buildButton(BuildContext) {
           style: TextStyle(color: Colors.white),
         ),
         onPressed: () {
-          Navigator.pushNamed(BuildContext, RegisterPage.routeName);
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => RegisterPage()),
+          );
         },
       ),
     ],
