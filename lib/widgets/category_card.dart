@@ -33,7 +33,7 @@ class CategoryCard extends StatelessWidget {
         child: Material(
           color: Colors.transparent,
           child: InkWell(
-            onTap: press,
+            onTap: press(),
             child: Padding(
               padding: const EdgeInsets.all(20.0),
               child: Column(
@@ -46,8 +46,8 @@ class CategoryCard extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: Theme.of(context)
                         .textTheme
-                        .title
-                        .copyWith(fontSize: 15),
+                        .headline6
+                        ?.copyWith(fontSize: 15),
                   )
                 ],
               ),

@@ -3,13 +3,14 @@ import 'package:flutter_svg/svg.dart';
 import 'package:gardenio_tubes/constants.dart';
 import 'package:gardenio_tubes/widgets/bottom_nav_bar.dart';
 import 'package:gardenio_tubes/widgets/category_card.dart';
+import 'package:gardenio_tubes/widgets/search_bar.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
-      bottomNavigationBar: const BottomNavBar(),
+      bottomNavigationBar: BottomNavBar(),
       body: Stack(
         children: <Widget>[
           Container(
@@ -35,7 +36,7 @@ class HomeScreen extends StatelessWidget {
                       height: 52,
                       width: 52,
                       decoration: BoxDecoration(
-                        color: Color(0xFFF2BEA1),
+                        color: Color.fromRGBO(159, 192, 136, 1),
                         shape: BoxShape.circle,
                       ),
                       child: SvgPicture.asset("assets/icons/menu.svg"),
@@ -45,9 +46,10 @@ class HomeScreen extends StatelessWidget {
                     "Good Morning!",
                     style: Theme.of(context)
                         .textTheme
-                        .display1
-                        .copyWith(fontWeight: FontWeight.w900),
+                        .headline4
+                        ?.copyWith(fontWeight: FontWeight.w900),
                   ),
+                  SearchBar(),
                   Expanded(
                     child: GridView.count(
                       crossAxisCount: 2,

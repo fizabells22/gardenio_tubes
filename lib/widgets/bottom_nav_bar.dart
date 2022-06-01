@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gardenio_tubes/constants.dart';
+import 'package:gardenio_tubes/pages/recom_page.dart';
 
 class BottomNavBar extends StatelessWidget {
   const BottomNavBar({
@@ -20,15 +20,39 @@ class BottomNavBar extends StatelessWidget {
           BottomNavItem(
             title: "Today",
             svgScr: "assets/icons/calendar.svg",
+            press: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) {
+                  return RecomPage();
+                }),
+              );
+            }, key: ,
           ),
           BottomNavItem(
             title: "My Plant",
             svgScr: "assets/icons/gym.svg",
-            isActive: true,
+            press: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) {
+                  return RecomPage();
+                }),
+              );
+            },
+            isActive: true, key: null,
           ),
           BottomNavItem(
             title: "Settings",
             svgScr: "assets/icons/settings.svg",
+            press: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) {
+                  return RecomPage();
+                }),
+              );
+            }, key: ,
           ),
         ],
       ),
@@ -52,7 +76,7 @@ class BottomNavItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: press,
+      onTap: press(),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
