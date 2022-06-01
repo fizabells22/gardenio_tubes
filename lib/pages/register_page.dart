@@ -10,16 +10,25 @@ class RegisterPage extends StatefulWidget {
 class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
         color: primaryColor,
         padding: EdgeInsets.all(20.0),
         child: ListView(
           children: <Widget>[
-            _iconRegistrasi(),
-            _titleDescription(),
-            _textField(),
-            _buildButton(context),
+            Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  SizedBox(height: size.height * 0.15),
+                  _iconRegistrasi(),
+                  _titleDescription(),
+                  _textField(),
+                  _buildButton(context),
+                ],
+              ),
+            ),
           ],
         ),
       ),
