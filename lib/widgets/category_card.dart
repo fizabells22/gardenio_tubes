@@ -2,17 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gardenio_tubes/constants.dart';
 
-class CategoryCard extends StatelessWidget {
+class CategoryCard extends StatefulWidget {
   final String svgSrc;
   final String title;
   final Function press;
   const CategoryCard({
-    required Key key,
+    Key? key,
     required this.svgSrc,
     required this.title,
     required this.press,
   }) : super(key: key);
 
+  @override
+  State<CategoryCard> createState() => _CategoryCardState();
+}
+
+class _CategoryCardState extends State<CategoryCard> {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
@@ -33,16 +38,16 @@ class CategoryCard extends StatelessWidget {
         child: Material(
           color: Colors.transparent,
           child: InkWell(
-            onTap: press(),
+            onTap: widget.press(),
             child: Padding(
               padding: const EdgeInsets.all(20.0),
               child: Column(
                 children: <Widget>[
                   Spacer(),
-                  SvgPicture.asset(svgSrc),
+                  SvgPicture.asset(widget.svgSrc),
                   Spacer(),
                   Text(
-                    title,
+                    widget.title,
                     textAlign: TextAlign.center,
                     style: Theme.of(context)
                         .textTheme

@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:gardenio_tubes/pages/login_page.dart';
+import 'package:gardenio_tubes/pages/register_page.dart';
 
-class FirstScreen extends StatelessWidget {
+class FirstScreen extends StatefulWidget {
+  @override
+  State<FirstScreen> createState() => _FirstScreenState();
+}
+
+class _FirstScreenState extends State<FirstScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,7 +69,14 @@ class FirstScreen extends StatelessWidget {
                                 RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(30.0),
                                     side: BorderSide(color: Colors.grey)))),
-                    onPressed: () => null),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) {
+                          return LoginPage();
+                        }),
+                      );
+                    }),
               ),
               SizedBox(width: 10, height: 10),
               Container(
@@ -84,7 +97,14 @@ class FirstScreen extends StatelessWidget {
                                 RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(30.0),
                                     side: BorderSide(color: Colors.grey)))),
-                    onPressed: () => null),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) {
+                          return RegisterPage();
+                        }),
+                      );
+                    }),
               ),
             ])
           ],

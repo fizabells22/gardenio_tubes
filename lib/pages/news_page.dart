@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gardenio_tubes/constants.dart';
 
 class Categories extends StatefulWidget {
   @override
@@ -11,10 +12,11 @@ class _CategoriesState extends State<Categories> {
   int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
+    Size SizeConfig = MediaQuery.of(context).size;
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: SizeConfig.defaultSize * 2),
+      padding: EdgeInsets.symmetric(vertical: SizeConfig.height * 2),
       child: SizedBox(
-        height: SizeConfig.defaultSize * 3.5, // 35
+        height: SizeConfig.height * 3.5, // 35
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemCount: categories.length,
@@ -25,6 +27,7 @@ class _CategoriesState extends State<Categories> {
   }
 
   Widget buildCategoriItem(int index) {
+    Size SizeConfig = MediaQuery.of(context).size;
     return GestureDetector(
       onTap: () {
         setState(() {
@@ -33,28 +36,28 @@ class _CategoriesState extends State<Categories> {
       },
       child: Container(
         alignment: Alignment.center,
-        margin: EdgeInsets.only(left: SizeConfig.defaultSize * 2),
+        margin: EdgeInsets.only(left: SizeConfig.height * 2),
         padding: EdgeInsets.symmetric(
-          horizontal: SizeConfig.defaultSize * 2, //20
-          vertical: SizeConfig.defaultSize * 0.5, //5
+          horizontal: SizeConfig.height * 2, //20
+          vertical: SizeConfig.height * 0.5, //5
         ),
         decoration: BoxDecoration(
             color:
                 selectedIndex == index ? Color(0xFFEFF3EE) : Colors.transparent,
             borderRadius: BorderRadius.circular(
-              SizeConfig.defaultSize * 1.6, // 16
+              SizeConfig.height * 1.6, // 16
             )),
         child: Text(
           categories[index],
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            color: selectedIndex == index ? kPrimaryColor : Color(0xFFC2C2B5),
+            color: selectedIndex == index ? kPrimaryColor : kPrimaryColor,
           ),
         ),
       ),
     );
   }
-} 
+}
 
 class News {
   final int id, like, comment;

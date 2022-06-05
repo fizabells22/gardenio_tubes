@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gardenio_tubes/constants.dart';
-import 'package:gardenio_tubes/pages/recom_page.dart';
 
-class BottomNavBar extends StatelessWidget {
+class BottomNavBar extends StatefulWidget {
   const BottomNavBar({
-    required Key key,
+    Key? key,
   }) : super(key: key);
 
+  @override
+  State<BottomNavBar> createState() => _BottomNavBarState();
+}
+
+class _BottomNavBarState extends State<BottomNavBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -20,39 +25,18 @@ class BottomNavBar extends StatelessWidget {
           BottomNavItem(
             title: "Today",
             svgScr: "assets/icons/calendar.svg",
-            press: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) {
-                  return RecomPage();
-                }),
-              );
-            }, key: ,
+            press: () {},
           ),
           BottomNavItem(
             title: "My Plant",
             svgScr: "assets/icons/gym.svg",
-            press: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) {
-                  return RecomPage();
-                }),
-              );
-            },
-            isActive: true, key: null,
+            isActive: true,
+            press: () {},
           ),
           BottomNavItem(
             title: "Settings",
             svgScr: "assets/icons/settings.svg",
-            press: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) {
-                  return RecomPage();
-                }),
-              );
-            }, key: ,
+            press: () {},
           ),
         ],
       ),
@@ -66,7 +50,7 @@ class BottomNavItem extends StatelessWidget {
   final Function press;
   final bool isActive;
   const BottomNavItem({
-    required Key key,
+    Key? key,
     required this.svgScr,
     required this.title,
     required this.press,

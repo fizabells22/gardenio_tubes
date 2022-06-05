@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:gardenio_tubes/pages/first_screen.dart';
 import 'package:gardenio_tubes/constants.dart';
+import 'package:gardenio_tubes/pages/home_page.dart';
 import 'package:gardenio_tubes/pages/register_page.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -129,20 +135,17 @@ Widget _buildButton(BuildContext context) {
       Padding(
         padding: EdgeInsets.only(top: 16.0),
       ),
-      InkWell(
-        child: Container(
-          padding: EdgeInsets.symmetric(vertical: 8.0),
-          width: double.infinity,
-          child: Text(
-            'Login',
-            style: TextStyle(color: primaryColor),
-            textAlign: TextAlign.center,
-          ),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(30.0),
-          ),
+      FlatButton(
+        child: Text(
+          'Login',
+          style: TextStyle(color: Colors.white),
         ),
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => HomeScreen()),
+          );
+        },
       ),
       Padding(
         padding: EdgeInsets.only(top: 16.0),

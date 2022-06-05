@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
-class RecomPage extends StatelessWidget {
+class RecomPage extends StatefulWidget {
+  @override
+  State<RecomPage> createState() => _RecomPageState();
+}
+
+class _RecomPageState extends State<RecomPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

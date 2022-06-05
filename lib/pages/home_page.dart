@@ -1,16 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gardenio_tubes/constants.dart';
+import 'package:gardenio_tubes/pages/news_page.dart';
+import 'package:gardenio_tubes/pages/recom_page.dart';
 import 'package:gardenio_tubes/widgets/bottom_nav_bar.dart';
 import 'package:gardenio_tubes/widgets/category_card.dart';
-import 'package:gardenio_tubes/widgets/search_bar.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
-      bottomNavigationBar: BottomNavBar(),
+      bottomNavigationBar: const BottomNavBar(),
       body: Stack(
         children: <Widget>[
           Container(
@@ -36,7 +42,7 @@ class HomeScreen extends StatelessWidget {
                       height: 52,
                       width: 52,
                       decoration: BoxDecoration(
-                        color: Color.fromRGBO(159, 192, 136, 1),
+                        color: Color(0xFFF2BEA1),
                         shape: BoxShape.circle,
                       ),
                       child: SvgPicture.asset("assets/icons/menu.svg"),
@@ -46,10 +52,9 @@ class HomeScreen extends StatelessWidget {
                     "Good Morning!",
                     style: Theme.of(context)
                         .textTheme
-                        .headline4
+                        .headline1
                         ?.copyWith(fontWeight: FontWeight.w900),
                   ),
-                  SearchBar(),
                   Expanded(
                     child: GridView.count(
                       crossAxisCount: 2,
@@ -76,7 +81,7 @@ class HomeScreen extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(builder: (context) {
-                                return News();
+                                return RecomPage();
                               }),
                             );
                           },
@@ -88,7 +93,7 @@ class HomeScreen extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(builder: (context) {
-                                return DetailsScreen();
+                                return RecomPage();
                               }),
                             );
                           },
@@ -100,7 +105,7 @@ class HomeScreen extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(builder: (context) {
-                                return DetailsScreen();
+                                return RecomPage();
                               }),
                             );
                           },
