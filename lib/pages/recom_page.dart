@@ -70,7 +70,7 @@ class _RecomPageState extends State<RecomPage> {
                     fontFamily: 'Poppins'),
               ),
                ) ),),
-                            GestureDetector(
+                GestureDetector(
                 onTap: (){
                 Navigator.push(
                         context,
