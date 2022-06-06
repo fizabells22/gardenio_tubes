@@ -23,10 +23,10 @@ class _HomeScreenState extends State<HomeScreen> {
             height: size.height * .45,
             decoration: BoxDecoration(
               color: Color.fromRGBO(159, 192, 136, 1),
-              image: DecorationImage(
-                alignment: Alignment.centerLeft,
-                image: AssetImage("assets/images/undraw_pilates_gpdb.png"),
-              ),
+              // image: DecorationImage(
+              //   alignment: Alignment.centerLeft,
+              // image: AssetImage("assets/images/undraw_pilates_gpdb.png"),
+              // ),
             ),
           ),
           SafeArea(
@@ -89,18 +89,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         CategoryCard(
                           title: "My Plant",
                           svgSrc: "assets/icons/plant.svg",
-                          press: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) {
-                                return RecomPage();
-                              }),
-                            );
-                          },
-                        ),
-                        CategoryCard(
-                          title: "Plant's Camera",
-                          svgSrc: "assets/icons/camera.svg",
                           press: () {
                             Navigator.push(
                               context,

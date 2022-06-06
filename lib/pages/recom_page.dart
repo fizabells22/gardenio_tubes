@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:gardenio_tubes/pages/complexplant.dart';
+import 'package:gardenio_tubes/pages/simpleplant.dart';
 
 class RecomPage extends StatefulWidget {
   @override
@@ -36,6 +38,16 @@ class _RecomPageState extends State<RecomPage> {
               ]),
             ),
             Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+              GestureDetector(
+                onTap: (){
+                Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) {
+                          return listRibet();
+                        }),
+                      );
+   },
+               child:(
               Container(
                 width: 120.0,
                 height: 120.0,
@@ -49,14 +61,25 @@ class _RecomPageState extends State<RecomPage> {
                   size: 40.0,
                   color: Colors.grey,
                 ),
-              ),
               Text(
                 "Tanaman Hias dengan Perawatan",
                 style: TextStyle(
                     color: Colors.black,
                     fontSize: 20.0,
-                    fontWeight: FontWeight.w500),
+                    fontWeight: FontWeight.w500,
+                    fontFamily: 'Poppins'),
               ),
+               ) ),),
+                            GestureDetector(
+                onTap: (){
+                Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) {
+                          return listSimple();
+                        }),
+                      );
+   },
+               child:(
               Container(
                 width: 120.0,
                 height: 120.0,
@@ -70,18 +93,18 @@ class _RecomPageState extends State<RecomPage> {
                   size: 40.0,
                   color: Colors.grey,
                 ),
-              ),
               Text(
                 "Tanaman Hias Minim Perawatan",
                 style: TextStyle(
                     color: Colors.black,
                     fontSize: 20.0,
-                    fontWeight: FontWeight.w500),
+                    fontWeight: FontWeight.w500,
+                    fontFamily: 'Poppins'),
               ),
+               )),),
+           ]),
             ]),
-          ],
-        ),
-      ),
-    );
+          ),
+        );
   }
 }

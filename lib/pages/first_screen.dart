@@ -52,8 +52,7 @@ class _FirstScreenState extends State<FirstScreen> {
             ),
             Column(mainAxisAlignment: MainAxisAlignment.end, children: [
               Container(
-                width: 400,
-                height: 45,
+                width: double.infinity,
                 child: ElevatedButton(
                     child: Text("Sign In".toUpperCase(),
                         style: TextStyle(fontSize: 14)),
@@ -80,8 +79,7 @@ class _FirstScreenState extends State<FirstScreen> {
               ),
               SizedBox(width: 10, height: 10),
               Container(
-                width: 400,
-                height: 45,
+                width: double.infinity,
                 child: ElevatedButton(
                     child: Text("Sign Up".toUpperCase(),
                         style: TextStyle(fontSize: 14)),

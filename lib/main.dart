@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gardenio_tubes/pages/login_page.dart';
 import 'package:gardenio_tubes/pages/first_screen.dart';
+import 'package:gardenio_tubes/pages/home_page.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: FirstScreen(),
+      home: HomeScreen(),
     );
   }
 }

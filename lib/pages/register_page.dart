@@ -13,7 +13,7 @@ class _RegisterPageState extends State<RegisterPage> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
-        color: primaryColor,
+        color: kPrimaryColor,
         padding: EdgeInsets.all(20.0),
         child: ListView(
           children: <Widget>[
@@ -38,7 +38,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
 Widget _iconRegistrasi() {
   return Image.asset(
-    "assets/images/logo.png",
+    "assets/icons/plant.svg",
     width: 150.0,
     height: 150.0,
   );
@@ -53,17 +53,9 @@ Widget _titleDescription() {
       Text(
         "Registrasi",
         style: TextStyle(
-          color: Colors.white,
+          color: Colors.black,
           fontSize: 16.0,
         ),
-      ),
-      Text(
-        "Lorem Impsum dolar sit amrt lorem ipsum ",
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 12.0,
-        ),
-        textAlign: TextAlign.center,
       ),
     ],
   );
@@ -93,7 +85,7 @@ Widget _textField() {
           hintText: "Username",
           hintStyle: TextStyle(color: Colors.white),
         ),
-        style: TextStyle(color: Colors.white),
+        style: TextStyle(color: Colors.black),
         autofocus: false,
       ),
       Padding(
@@ -117,7 +109,7 @@ Widget _textField() {
           hintText: "Passwrod",
           hintStyle: TextStyle(color: hintColor),
         ),
-        style: TextStyle(color: Colors.white),
+        style: TextStyle(color: Colors.black),
         obscureText: true,
         autofocus: false,
       ),
@@ -137,7 +129,7 @@ Widget _buildButton(BuildContext context) {
           width: double.infinity,
           child: Text(
             'Registrasi',
-            style: TextStyle(color: primaryColor),
+            style: TextStyle(color: Colors.black),
             textAlign: TextAlign.center,
           ),
           decoration: BoxDecoration(
@@ -152,14 +144,14 @@ Widget _buildButton(BuildContext context) {
       Text(
         'or',
         style: TextStyle(
-          color: Colors.white,
+          color: Colors.black,
           fontSize: 12.0,
         ),
       ),
       FlatButton(
         child: Text(
           'Login',
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: Colors.black),
         ),
         onPressed: () {
           Navigator.pushNamed(context, "/");

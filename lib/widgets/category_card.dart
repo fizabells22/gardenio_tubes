@@ -51,7 +51,7 @@ class _CategoryCardState extends State<CategoryCard> {
                     textAlign: TextAlign.center,
                     style: Theme.of(context)
                         .textTheme
-                        .headline6
+                        .headline1
                         ?.copyWith(fontSize: 15),
                   )
                 ],

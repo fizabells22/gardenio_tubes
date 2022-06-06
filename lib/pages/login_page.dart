@@ -15,7 +15,7 @@ class _LoginPageState extends State<LoginPage> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
-        color: primaryColor,
+        color: kPrimaryColor,
         padding: EdgeInsets.all(20.0),
         child: ListView(
           children: <Widget>[
@@ -39,7 +39,7 @@ class _LoginPageState extends State<LoginPage> {
 
 Widget _iconLogin() {
   return Image.asset(
-    "assets/images/logo.png",
+    "assets/icons/plant.svg",
     height: 150.0,
     width: 150.0,
   );
@@ -52,21 +52,20 @@ Widget _titleDescription() {
         padding: EdgeInsets.only(top: 16.0),
       ),
       Text(
-        "Login Into App",
+        "Login Into Gardenio",
         style: TextStyle(
-          color: Colors.white,
+          color: Colors.black,
           fontSize: 16.0,
+          fontFamily: 'Poppins',
         ),
       ),
       Padding(
         padding: EdgeInsets.only(top: 12.0),
       ),
       Text(
-        "Lorem Ipsum sim amet , lorem ipsum amet",
+        "Here is the time to take care your plant",
         style: TextStyle(
-          fontSize: 12.0,
-          color: Colors.white,
-        ),
+            fontSize: 12.0, color: Colors.black, fontFamily: 'Poppins'),
         textAlign: TextAlign.center,
       ),
     ],
@@ -97,7 +96,7 @@ Widget _textField() {
           hintText: "Username",
           hintStyle: TextStyle(color: hintColor),
         ),
-        style: TextStyle(color: Colors.white),
+        style: TextStyle(color: Colors.black, fontFamily: 'Poppins'),
         autofocus: false,
       ),
       Padding(
@@ -121,7 +120,7 @@ Widget _textField() {
           hintText: "Password",
           hintStyle: TextStyle(color: hintColor),
         ),
-        style: TextStyle(color: Colors.white),
+        style: TextStyle(color: Colors.black, fontFamily: 'Poppins'),
         obscureText: true,
         autofocus: false,
       ),
@@ -138,7 +137,7 @@ Widget _buildButton(BuildContext context) {
       FlatButton(
         child: Text(
           'Login',
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: Colors.black, fontFamily: 'Poppins'),
         ),
         onPressed: () {
           Navigator.push(
@@ -160,7 +159,7 @@ Widget _buildButton(BuildContext context) {
       FlatButton(
         child: Text(
           'Register',
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: Colors.black, fontFamily: 'Poppins'),
         ),
         onPressed: () {
           Navigator.push(

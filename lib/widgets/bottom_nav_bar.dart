@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gardenio_tubes/constants.dart';
+import 'package:gardenio_tubes/pages/home_page.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({
@@ -23,20 +24,41 @@ class _BottomNavBarState extends State<BottomNavBar> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           BottomNavItem(
-            title: "Today",
-            svgScr: "assets/icons/calendar.svg",
-            press: () {},
+            title: "Home",
+            svgScr: "assets/icons/menu.svg",
+            press: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) {
+                  return HomeScreen();
+                }),
+              );
+            },
           ),
           BottomNavItem(
             title: "My Plant",
-            svgScr: "assets/icons/gym.svg",
+            svgScr: "assets/icons/plant.svg",
             isActive: true,
-            press: () {},
+            press: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) {
+                  return HomeScreen();
+                }),
+              );
+            },
           ),
           BottomNavItem(
             title: "Settings",
             svgScr: "assets/icons/settings.svg",
-            press: () {},
+            press: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) {
+                  return HomeScreen();
+                }),
+              );
+            },
           ),
         ],
       ),
