@@ -29,7 +29,7 @@ class _RecomPageState extends State<RecomPage> {
                   TextSpan(
                     text: "Select the perfect plants for your place",
                     style: TextStyle(
-                      color: Colors.black,
+                      color: Color.fromARGB(255, 250, 250, 250),
                       fontSize: 28,
                       fontWeight: FontWeight.bold,
                       fontFamily: 'Poppins',
@@ -47,32 +47,37 @@ class _RecomPageState extends State<RecomPage> {
                       }),
                     );
                   },
-                  child: Column(
-                    children: [
-                      Container(
-                        width: 120.0,
-                        height: 120.0,
-                        margin: EdgeInsets.all(10.0),
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Colors.black),
-                          borderRadius: BorderRadius.all(Radius.circular(20.0)),
-                        ),
-                        child: new Icon(
+                  child: (Container(
+                    width: 170.0,
+                    height: 170.0,
+                    margin: EdgeInsets.all(10.0),
+                    decoration: BoxDecoration(
+                      border:
+                          Border.all(color: Color.fromARGB(255, 255, 255, 255)),
+                      borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        new Icon(
                           Icons.park,
                           size: 40.0,
-                          color: Colors.grey,
+                          color: Color.fromARGB(255, 255, 255, 255),
                         ),
-                      ),
-                      Text(
-                        "Tanaman Hias dengan Perawatan",
-                        style: TextStyle(
-                            color: Colors.black,
+                        Text(
+                          "Tanaman Hias Dengan Perawatan",
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 255, 255, 255),
                             fontSize: 20.0,
                             fontWeight: FontWeight.w500,
-                            fontFamily: 'Poppins'),
-                      ),
-                    ],
-                  ),
+                            fontFamily: 'Poppins',
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ],
+                    ),
+                  )),
                 ),
                 GestureDetector(
                   onTap: () {
@@ -84,27 +89,32 @@ class _RecomPageState extends State<RecomPage> {
                     );
                   },
                   child: (Container(
-                    width: 120.0,
-                    height: 120.0,
+                    width: 170.0,
+                    height: 170.0,
                     margin: EdgeInsets.all(10.0),
                     decoration: BoxDecoration(
-                      border: Border.all(color: Colors.black),
+                      border:
+                          Border.all(color: Color.fromARGB(255, 255, 255, 255)),
                       borderRadius: BorderRadius.all(Radius.circular(20.0)),
                     ),
                     child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         new Icon(
-                          Icons.home,
+                          Icons.park,
                           size: 40.0,
-                          color: Colors.grey,
+                          color: Color.fromARGB(255, 255, 255, 255),
                         ),
                         Text(
                           "Tanaman Hias Minim Perawatan",
                           style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 20.0,
-                              fontWeight: FontWeight.w500,
-                              fontFamily: 'Poppins'),
+                            color: Color.fromARGB(255, 255, 255, 255),
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.w500,
+                            fontFamily: 'Poppins',
+                          ),
+                          textAlign: TextAlign.center,
                         ),
                       ],
                     ),

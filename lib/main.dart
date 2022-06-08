@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:gardenio_tubes/pages/login_page.dart';
 import 'package:gardenio_tubes/pages/first_screen.dart';
 import 'package:gardenio_tubes/pages/home_page.dart';
+import 'package:gardenio_tubes/pages/news_page.dart';
+import 'package:gardenio_tubes/pages/recom_page.dart';
 import 'package:gardenio_tubes/pages/register_page.dart';
 
 Future<void> main() async {
@@ -21,7 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: RegisterPage(),
+      home: RecomPage(),
     );
   }
 }
