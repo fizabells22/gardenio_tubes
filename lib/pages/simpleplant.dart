@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gardenio_tubes/widgets/bottom_nav_bar.dart';
 
 class listSimple extends StatefulWidget {
   @override
@@ -42,6 +43,7 @@ class listSimpleState extends State<listSimple> {
         elevation: 10,
         backgroundColor: Colors.grey[500],
       ),
+      bottomNavigationBar: const BottomNavBar(),
       body: ListView.builder(
         itemCount: imgList.length,
         itemBuilder: (context, index) {

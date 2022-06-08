@@ -7,7 +7,7 @@ packages:
       name: animated_text_kit
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.5.4"
+    version: "4.2.2"
   animated_widgets:
     dependency: "direct main"
     description:
@@ -178,7 +178,7 @@ packages:
       name: intl
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.16.1"
+    version: "0.17.0"
   lints:
     dependency: transitive
     description:

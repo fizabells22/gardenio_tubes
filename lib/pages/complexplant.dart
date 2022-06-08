@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gardenio_tubes/widgets/bottom_nav_bar.dart';
 
 class listRibet extends StatefulWidget {
   @override
@@ -33,6 +34,7 @@ class listRibetState extends State<listRibet> {
         elevation: 10,
         backgroundColor: Colors.grey[500],
       ),
+      bottomNavigationBar: const BottomNavBar(),
       body: ListView.builder(
         itemCount: imgList.length,
         itemBuilder: (context, index) {

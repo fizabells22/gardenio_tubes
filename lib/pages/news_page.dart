@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gardenio_tubes/constants.dart';
+import 'package:gardenio_tubes/widgets/bottom_nav_bar.dart';
 
 class Categories extends StatefulWidget {
   @override
@@ -28,6 +29,8 @@ class _CategoriesState extends State<Categories> {
 
   Widget buildCategoriItem(int index) {
     Size SizeConfig = MediaQuery.of(context).size;
+    bottomNavigationBar:
+    const BottomNavBar();
     return GestureDetector(
       onTap: () {
         setState(() {
