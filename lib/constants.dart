@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const kPrimaryColor = Color.fromARGB(249, 249, 249, 249);
+const kPrimaryColor = Color.fromARGB(255, 247, 247, 247);
 const primaryDarkColor = Color(0xff607Cbf);
 const underlineTextField = Color(0xff8b97ff);
 const hintColor = Color(0xffccd1ff);

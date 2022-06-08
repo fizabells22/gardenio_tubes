@@ -38,6 +38,8 @@ dependencies:
   timezone: ^0.5.9
   animated_text_kit: ^2.5.3
   animated_widgets: ^1.0.6
+  flutter_palette: ^1.1.0+1
+
 
 
   # The following adds the Cupertino Icons font to your application.
