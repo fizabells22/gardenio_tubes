@@ -38,11 +38,12 @@ class _LoginPageState extends State<LoginPage> {
 }
 
 Widget _iconLogin() {
-  return Image.asset(
-    "assets/icons/plant.svg",
-    height: 150.0,
-    width: 150.0,
-  );
+  // return Image.asset(
+  //   "assets/icons/plant.svg",
+  //   height: 150.0,
+  //   width: 150.0,
+  // );
+  return Container();
 }
 
 Widget _titleDescription() {

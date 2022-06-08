@@ -37,11 +37,12 @@ class _RegisterPageState extends State<RegisterPage> {
 }
 
 Widget _iconRegistrasi() {
-  return Image.asset(
-    "assets/icons/plant.svg",
-    width: 150.0,
-    height: 150.0,
-  );
+  // return Image.asset(
+  //   "assets/icons/plant.svg",
+  //   width: 150.0,
+  //   height: 150.0,
+  // );
+  return Container();
 }
 
 Widget _titleDescription() {
