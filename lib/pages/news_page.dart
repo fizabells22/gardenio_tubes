@@ -74,7 +74,7 @@ class News {
       required this.color});
 }
 
-List<News> recipeBundles = [
+List<News> newsBundles = [
   News(
       id: 1,
       like: 120,

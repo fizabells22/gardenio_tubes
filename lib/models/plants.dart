@@ -16,26 +16,26 @@ class Plants {
 
   //------------------set plants to map-------------------
 
-  Map<String, dynamic> pillToMap() {
+  Map<String, dynamic> plantToMap() {
     Map<String, dynamic> map = Map();
     map['id'] = this.id;
     map['name'] = this.name;
     map['howManyWeeks'] = this.howManyWeeks;
-    map['medicineForm'] = this.plantsForm;
+    map['plantsForm'] = this.plantsForm;
     map['time'] = this.time;
     map['notifyId'] = this.notifyId;
     return map;
   }
 
   //---------------------create plants object from map---------------------
-  Plants pillMapToObject(Map<String, dynamic> pillMap) {
+  Plants plantMapToObject(Map<String, dynamic> plantMap) {
     return Plants(
-        id: pillMap['id'],
-        name: pillMap['name'],
-        howManyWeeks: pillMap['howManyWeeks'],
-        plantsForm: pillMap['medicineForm'],
-        time: pillMap['time'],
-        notifyId: pillMap['notifyId']);
+        id: plantMap['id'],
+        name: plantMap['name'],
+        howManyWeeks: plantMap['howManyWeeks'],
+        plantsForm: plantMap['medicineForm'],
+        time: plantMap['time'],
+        notifyId: plantMap['notifyId']);
   }
 
   //---------------------| Get the plants image path |-------------------------
