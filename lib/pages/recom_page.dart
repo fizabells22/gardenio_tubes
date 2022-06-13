@@ -12,7 +12,6 @@ class _RecomPageState extends State<RecomPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: const BottomNavBar(),
       body: Container(
         width: double.infinity,
         decoration: const BoxDecoration(

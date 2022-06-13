@@ -25,9 +25,15 @@ class listRibetState extends State<listRibet> {
     double width = MediaQuery.of(context).size.width * 0.6;
     return Scaffold(
       appBar: AppBar(
-        // App Bar
+        leading: GestureDetector(
+            child: Icon(
+              Icons.arrow_back_ios,
+            ),
+            onTap: () {
+              Navigator.pop(context);
+            }),
         title: Text(
-          "Rekomendasi Tanaman Hias dengan Perawatan",
+          "Rekomendasi Tanaman Hias Dengan Perawatan",
           style: TextStyle(
               color: Colors.white, fontWeight: FontWeight.w600, fontSize: 21),
         ),

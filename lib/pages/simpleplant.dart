@@ -34,8 +34,13 @@ class listSimpleState extends State<listSimple> {
     double width = MediaQuery.of(context).size.width * 0.6;
     return Scaffold(
       appBar: AppBar(
-        leading: const Icon(Icons.keyboard_arrow_left),
-        // App Bar
+        leading: GestureDetector(
+            child: Icon(
+              Icons.arrow_back_ios,
+            ),
+            onTap: () {
+              Navigator.pop(context);
+            }),
         title: Text(
           "Rekomendasi Tanaman Hias Tanpa Perawatan",
           style: TextStyle(
