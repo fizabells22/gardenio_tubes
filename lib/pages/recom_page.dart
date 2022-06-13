@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gardenio_tubes/pages/complexplant.dart';
 import 'package:gardenio_tubes/pages/simpleplant.dart';
+import 'package:gardenio_tubes/widgets/bottom_nav_bar.dart';
 
 class RecomPage extends StatefulWidget {
   @override
@@ -11,6 +12,7 @@ class _RecomPageState extends State<RecomPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: const BottomNavBar(),
       body: Container(
         width: double.infinity,
         decoration: const BoxDecoration(

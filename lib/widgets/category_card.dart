@@ -3,12 +3,12 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gardenio_tubes/constants.dart';
 
 class CategoryCard extends StatefulWidget {
-  final String svgSrc;
+  final String image;
   final String title;
   final Function press;
   const CategoryCard({
     Key? key,
-    required this.svgSrc,
+    required this.image,
     required this.title,
     required this.press,
   }) : super(key: key);
@@ -44,7 +44,7 @@ class _CategoryCardState extends State<CategoryCard> {
               child: Column(
                 children: <Widget>[
                   Spacer(),
-                  SvgPicture.asset(widget.svgSrc),
+                  Image.asset(widget.image),
                   Spacer(),
                   Text(
                     widget.title,

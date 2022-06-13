@@ -45,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         color: Color(0xFFF2BEA1),
                         shape: BoxShape.circle,
                       ),
-                      child: SvgPicture.asset("assets/icons/menu.svg"),
+                      child: SvgPicture.asset("assets/icons/gambar1.jpeg"),
                     ),
                   ),
                   Text(
@@ -64,7 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       children: <Widget>[
                         CategoryCard(
                           title: "Plant Recommendation",
-                          svgSrc: "assets/icons/recom.svg",
+                          image: "assets/icons/gambar1.jpeg",
                           press: () {
                             Navigator.push(
                               context,
@@ -76,7 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         CategoryCard(
                           title: "News",
-                          svgSrc: "assets/icons/news.svg",
+                          image: "assets/icons/gambar2.jpeg",
                           press: () {
                             Navigator.push(
                               context,
@@ -88,7 +88,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         CategoryCard(
                           title: "My Plant",
-                          svgSrc: "assets/icons/plant.svg",
+                          image: "assets/icons/gambar3.jpeg",
                           press: () {
                             Navigator.push(
                               context,

@@ -25,7 +25,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
         children: <Widget>[
           BottomNavItem(
             title: "Home",
-            svgScr: "assets/icons/menu.svg",
+            image: "assets/icons/gambar1.jpeg",
             press: () {
               Navigator.push(
                 context,
@@ -37,7 +37,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
           ),
           BottomNavItem(
             title: "My Plant",
-            svgScr: "assets/icons/plant.svg",
+            image: "assets/icons/gambar2.jpeg",
             isActive: true,
             press: () {
               Navigator.push(
@@ -50,7 +50,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
           ),
           BottomNavItem(
             title: "Settings",
-            svgScr: "assets/icons/settings.svg",
+            image: "assets/icons/gambar3.jpeg",
             press: () {
               Navigator.push(
                 context,
@@ -67,13 +67,13 @@ class _BottomNavBarState extends State<BottomNavBar> {
 }
 
 class BottomNavItem extends StatelessWidget {
-  final String svgScr;
+  final String image;
   final String title;
   final Function press;
   final bool isActive;
   const BottomNavItem({
     Key? key,
-    required this.svgScr,
+    required this.image,
     required this.title,
     required this.press,
     this.isActive = false,
@@ -86,8 +86,8 @@ class BottomNavItem extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
-          SvgPicture.asset(
-            svgScr,
+          Image.asset(
+            image,
             color: isActive ? kActiveIconColor : kTextColor,
           ),
           Text(

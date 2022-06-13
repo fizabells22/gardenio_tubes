@@ -34,6 +34,7 @@ class listSimpleState extends State<listSimple> {
     double width = MediaQuery.of(context).size.width * 0.6;
     return Scaffold(
       appBar: AppBar(
+        leading: const Icon(Icons.keyboard_arrow_left),
         // App Bar
         title: Text(
           "Rekomendasi Tanaman Hias Tanpa Perawatan",
@@ -43,7 +44,7 @@ class listSimpleState extends State<listSimple> {
         elevation: 10,
         backgroundColor: Colors.grey[500],
       ),
-      bottomNavigationBar: const BottomNavBar(),
+      // bottomNavigationBar: const BottomNavBar(),
       body: ListView.builder(
         itemCount: imgList.length,
         itemBuilder: (context, index) {

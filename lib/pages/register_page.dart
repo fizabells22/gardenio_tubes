@@ -41,7 +41,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
 Widget _iconRegistrasi() {
   return Image.asset(
-    "assets/images/green.png",
+    "assets/images/greenn.png",
     height: 150.0,
     width: 150.0,
   );

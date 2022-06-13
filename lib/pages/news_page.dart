@@ -29,8 +29,8 @@ class _CategoriesState extends State<Categories> {
 
   Widget buildCategoriItem(int index) {
     Size SizeConfig = MediaQuery.of(context).size;
-    bottomNavigationBar:
-    const BottomNavBar();
+    // bottomNavigationBar:
+    // const BottomNavBar();
     return GestureDetector(
       onTap: () {
         setState(() {

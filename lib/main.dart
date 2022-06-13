@@ -5,6 +5,7 @@ import 'package:gardenio_tubes/pages/home_page.dart';
 import 'package:gardenio_tubes/pages/news_page.dart';
 import 'package:gardenio_tubes/pages/recom_page.dart';
 import 'package:gardenio_tubes/pages/register_page.dart';
+import 'package:gardenio_tubes/pages/simpleplant.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: RecomPage(),
+      home: Categories(),
     );
   }
 }
