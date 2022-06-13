@@ -1,101 +1,39 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:gardenio_tubes/constants.dart';
 import 'package:gardenio_tubes/pages/home_page.dart';
 
-class BottomNavBar extends StatefulWidget {
-  const BottomNavBar({
-    Key? key,
-  }) : super(key: key);
+class NavItem {
+  final int id;
+  final String icon;
+  final Widget destination;
 
-  @override
-  State<BottomNavBar> createState() => _BottomNavBarState();
-}
+  NavItem({required this.id, required this.icon, required this.destination});
 
-class _BottomNavBarState extends State<BottomNavBar> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
-      height: 80,
-      color: Colors.white,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          BottomNavItem(
-            title: "Home",
-            image: "assets/icons/gambar1.jpeg",
-            press: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) {
-                  return HomeScreen();
-                }),
-              );
-            },
-          ),
-          BottomNavItem(
-            title: "My Plant",
-            image: "assets/icons/gambar2.jpeg",
-            isActive: true,
-            press: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) {
-                  return HomeScreen();
-                }),
-              );
-            },
-          ),
-          BottomNavItem(
-            title: "Settings",
-            image: "assets/icons/gambar3.jpeg",
-            press: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) {
-                  return HomeScreen();
-                }),
-              );
-            },
-          ),
-        ],
-      ),
-    );
+  bool destinationChecker() {
+    if (destination != null) {
+      return true;
+    }
+    return false;
   }
 }
 
-class BottomNavItem extends StatelessWidget {
-  final String image;
-  final String title;
-  final Function press;
-  final bool isActive;
-  const BottomNavItem({
-    Key? key,
-    required this.image,
-    required this.title,
-    required this.press,
-    this.isActive = false,
-  }) : super(key: key);
+class NavItems extends ChangeNotifier {
+  int selectedIndex = 0;
 
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: press(),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: <Widget>[
-          Image.asset(
-            image,
-            color: isActive ? kActiveIconColor : kTextColor,
-          ),
-          Text(
-            title,
-            style: TextStyle(color: isActive ? kActiveIconColor : kTextColor),
-          ),
-        ],
-      ),
-    );
+  void chnageNavIndex({required int index}) {
+    selectedIndex = index;
+    notifyListeners();
   }
+
+  List<NavItem> items = [
+    NavItem(
+      id: 1,
+      icon: "assets/icons/gambar1.jpeg",
+      destination: HomeScreen(),
+    ),
+    NavItem(
+      id: 5,
+      icon: "assets/icons/gambar2.jpeg",
+      destination: HomeScreen(),
+    ),
+  ];
 }
