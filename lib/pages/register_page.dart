@@ -11,6 +11,65 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
+    FirebaseAuth _auth = FirebaseAuth.instance;
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  late String _name, _email, _password;
+
+  checkAuthentication() async {
+    _auth.authStateChanges().listen((user) async {
+      if (user != null) {
+        Navigator.pushReplacementNamed(context, "/");
+      }
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    this.checkAuthentication();
+  }
+
+  signUp() async {
+    if (_formKey.currentState.validate()) {
+      _formKey.currentState.save();
+
+      try {
+        UserCredential user = await _auth.createUserWithEmailAndPassword(
+            email: _email, password: _password);
+        if (user != null) {
+          // UserUpdateInfo updateuser = UserUpdateInfo();
+          // updateuser.displayName = _name;
+          //  user.updateProfile(updateuser);
+          await _auth.currentUser.updateProfile(displayName: _name);
+          // await Navigator.pushReplacementNamed(context,"/") ;
+
+        }
+      } catch (e) {
+        showError(e.message);
+        print(e);
+      }
+    }
+  }
+
+  showError(String errormessage) {
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text('ERROR'),
+            content: Text(errormessage),
+            actions: <Widget>[
+              FlatButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: Text('OK'))
+            ],
+          );
+        });
+  }
+  
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -133,6 +192,10 @@ Widget _textField() {
         padding: EdgeInsets.only(top: 12.0),
       ),
       TextFormField(
+        validator: (input) {
+                            if (input.length < 6)
+                              return 'Password Minimal 6 Karakter';
+                          },
         decoration: const InputDecoration(
           border: UnderlineInputBorder(),
           enabledBorder: UnderlineInputBorder(
@@ -152,6 +215,7 @@ Widget _textField() {
         ),
         style: TextStyle(color: Colors.black, fontFamily: 'Poppins'),
         obscureText: true,
+        onSaved: (input) => _password = input),
         autofocus: false,
       ),
     ],
