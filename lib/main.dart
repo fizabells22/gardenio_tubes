@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gardenio_tubes/pages/login_page.dart';
 import 'package:gardenio_tubes/pages/first_screen.dart';
 import 'package:gardenio_tubes/pages/home_page.dart';
-import 'package:gardenio_tubes/pages/news_page.dart';
+import 'package:gardenio_tubes/pages/news_page/categories_news.dart';
 import 'package:gardenio_tubes/pages/recom_page.dart';
 import 'package:gardenio_tubes/pages/register_page.dart';
 import 'package:gardenio_tubes/pages/simpleplant.dart';
