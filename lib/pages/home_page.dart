@@ -1,10 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:gardenio_tubes/constants.dart';
-import 'package:gardenio_tubes/pages/news_page/categories_news.dart';
 import 'package:gardenio_tubes/pages/recom_page.dart';
 import 'package:gardenio_tubes/widgets/bottom_nav_bar.dart';
 import 'package:gardenio_tubes/widgets/category_card.dart';
+import 'package:gardenio_tubes/widgets/search_bar.dart';
+
+class MyApp extends StatelessWidget {
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Gardenio',
+      theme: ThemeData(
+        fontFamily: "Poppins",
+        scaffoldBackgroundColor: kBackgroundColor,
+        textTheme: Theme.of(context).textTheme.apply(displayColor: kTextColor),
+      ),
+      home: HomeScreen(),
+    );
+  }
+}
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -44,7 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         color: Color(0xFFF2BEA1),
                         shape: BoxShape.circle,
                       ),
-                      child: SvgPicture.asset("assets/icons/gambar1.jpeg"),
+                      child: Image.asset("assets/icons/gambar1.jpeg"),
                     ),
                   ),
                   Text(
@@ -54,6 +70,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         .headline1
                         ?.copyWith(fontWeight: FontWeight.w900),
                   ),
+                  SearchBar(),
                   Expanded(
                     child: GridView.count(
                       crossAxisCount: 2,

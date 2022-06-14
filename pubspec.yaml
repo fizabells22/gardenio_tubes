@@ -29,8 +29,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_svg: ^1.0.3
-  intl: ^0.16.1
+  intl: ^0.17.0
   sqflite: ^2.0.2+1
   auto_size_text: ^2.1.0
   path: ^1.7.0
@@ -38,7 +37,11 @@ dependencies:
   timezone: ^0.5.9
   animated_text_kit: ^2.5.3
   animated_widgets: ^1.0.6
-  flutter_palette: ^1.1.0+1
+  flutter_signin_button: ^1.0.0
+  google_sign_in: ^4.5.9
+  provider: ^5.0.0
+  firebase_auth_web: ^3.3.16
+  firebase_auth: ^3.3.19
 
 
 
