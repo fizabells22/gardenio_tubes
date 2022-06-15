@@ -1,7 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:gardenio_tubes/constants.dart';
 import 'package:gardenio_tubes/pages/login_page.dart';
-
 import 'home_page.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -31,8 +31,8 @@ class _RegisterPageState extends State<RegisterPage> {
   }
 
   signUp() async {
-    if (_formKey.currentState.validate()) {
-      _formKey.currentState.save();
+    if (_formKey.currentState!.validate()) {
+      _formKey.currentState?.save();
 
       try {
         UserCredential user = await _auth.createUserWithEmailAndPassword(
@@ -41,7 +41,7 @@ class _RegisterPageState extends State<RegisterPage> {
           // UserUpdateInfo updateuser = UserUpdateInfo();
           // updateuser.displayName = _name;
           //  user.updateProfile(updateuser);
-          await _auth.currentUser.updateProfile(displayName: _name);
+          await _auth.currentUser!.updateProfile(displayName: _name);
           // await Navigator.pushReplacementNamed(context,"/") ;
 
         }
@@ -193,7 +193,7 @@ Widget _textField() {
       ),
       TextFormField(
         validator: (input) {
-                            if (input.length < 6)
+                            if (input!.length < 6)
                               return 'Password Minimal 6 Karakter';
                           },
         decoration: const InputDecoration(

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:gardenio_tubes/constants.dart';
 import 'package:gardenio_tubes/pages/home_page.dart';
 import 'package:gardenio_tubes/pages/register_page.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -32,14 +32,14 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   login() async {
-    if (_formKey.currentState.validate()) {
-      _formKey.currentState.save();
+    if (_formKey.currentState!.validate()) {
+      _formKey.currentState!.save();
 
       try {
         await _auth.signInWithEmailAndPassword(
             email: _email, password: _password);
       } catch (e) {
-        showError(e.message);
+        // showError(e.message);
         print(e);
       }
     }

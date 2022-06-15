@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+// import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gardenio_tubes/models/news_list.dart';
 
 class NewsCard extends StatelessWidget {
@@ -79,7 +79,7 @@ class NewsCard extends StatelessWidget {
   Row buildInfoRow(double defaultSize, {required String iconSrc, text}) {
     return Row(
       children: <Widget>[
-        SvgPicture.asset(iconSrc),
+        Image.asset(iconSrc),
         SizedBox(width: defaultSize), // 10
         Text(
           text,
