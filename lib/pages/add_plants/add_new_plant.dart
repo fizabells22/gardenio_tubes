@@ -1,6 +1,4 @@
 import 'dart:math';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:gardenio_tubes/database/repository.dart';
@@ -11,7 +9,6 @@ import 'package:gardenio_tubes/pages/add_plants/form_fields.dart';
 import 'package:gardenio_tubes/pages/add_plants/plant_type_card.dart';
 import 'package:gardenio_tubes/pages/add_plants/platform_flat_button.dart';
 import 'package:gardenio_tubes/pages/add_plants/snackbar.dart';
-
 import 'package:intl/intl.dart';
 import 'package:timezone/data/latest.dart' as tz;
 import 'package:timezone/timezone.dart' as tz;
@@ -326,7 +323,9 @@ class _AddNewPlantState extends State<AddNewPlant> {
           tz.initializeTimeZones();
           tz.setLocalLocation(tz.getLocation('Europe/Warsaw'));
           await _notifications.showNotification(
-              plant.id + " " + plant.name + " " + plant.plantsForm + " " + time,
+              plant.id,
+              plant.name + " " + plant.plantsForm + " " + plant.howManyWeeks,
+              time,
               plant.notifyId,
               flutterLocalNotificationsPlugin);
           setDate = setDate.add(Duration(milliseconds: 604800000));
@@ -335,7 +334,7 @@ class _AddNewPlantState extends State<AddNewPlant> {
         }
       }
       //---------------------------------------------------------------------------------------
-      snackbar.showSnack("Saved", _scaffoldKey, null);
+      snackbar.showSnack("Saved", _scaffoldKey, null());
       Navigator.pop(context);
     }
   }
