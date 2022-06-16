@@ -1,3 +1,5 @@
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:gardenio_tubes/constants.dart';
 import 'package:gardenio_tubes/pages/recom_page.dart';
@@ -5,24 +7,10 @@ import 'package:gardenio_tubes/widgets/bottom_nav_bar.dart';
 import 'package:gardenio_tubes/widgets/category_card.dart';
 import 'package:gardenio_tubes/widgets/search_bar.dart';
 
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Gardenio',
-      theme: ThemeData(
-        fontFamily: "Poppins",
-        scaffoldBackgroundColor: kBackgroundColor,
-        textTheme: Theme.of(context).textTheme.apply(displayColor: kTextColor),
-      ),
-      home: HomeScreen(),
-    );
-  }
-}
-
 class HomeScreen extends StatefulWidget {
+  // const HomeScreen({Key? key, required this.user}) : super(key: key);
+  // final FirebaseUser user; //package firebasenya tidak mau mengenali
+
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
