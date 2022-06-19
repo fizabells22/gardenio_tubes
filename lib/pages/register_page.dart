@@ -13,6 +13,7 @@ class RegisterPage extends StatefulWidget {
 class _RegisterPageState extends State<RegisterPage> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   FirebaseAuth _auth = FirebaseAuth.instance;
+  User get user => _auth.currentUser!;
   late String _name, _email, _password;
 
   checkAuthentication() async {
@@ -216,24 +217,24 @@ class _RegisterPageState extends State<RegisterPage> {
   }
 
   Future<void> signUp() async {
-    if (_formKey.currentState!.validate()) {
-      _formKey.currentState!.save();
-      try {
-        UserCredential user = await _auth.createUserWithEmailAndPassword(
-            email: _email, password: _password);
-        if (user != null) {
-          // UserUpdateInfo updateuser = UserUpdateInfo();
-          // updateuser.displayName = _name;
-          //  user.updateProfile(updateuser);
-          await _auth.currentUser?.updateProfile(displayName: _name);
-          Navigator.of(context).pop();
-          Navigator.pushReplacement(
-              context, MaterialPageRoute(builder: (context) => LoginPage()));
-        }
-      } catch (e) {
-        //  showError(e.message);
-        print(e);
+    String required String password,
+    BuildContext context,
+  }) async {
+    try {
+      await _auth.createUserWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+      await sendEmailVerification(context);
+    } on FirebaseAuthException catch (e) {
+      // if you want to display your own custom error message
+      if (e.code == 'weak-password') {
+        print('The password provided is too weak.');
+      } else if (e.code == 'email-already-in-use') {
+        print('The account already exists for that email.');
       }
+      showSnackBar(
+          context, e.message!); // Displaying the usual firebase error message
     }
   }
 }

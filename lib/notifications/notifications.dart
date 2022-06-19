@@ -1,5 +1,4 @@
 import 'package:gardenio_tubes/models/plants.dart';
-
 import 'package:timezone/data/latest.dart' as tz;
 import 'package:timezone/timezone.dart' as tz;
 import 'package:flutter/material.dart';
@@ -33,8 +32,7 @@ class Notifications {
         description,
         tz.TZDateTime.now(tz.local).add(Duration(milliseconds: time)),
         const NotificationDetails(
-            android: AndroidNotificationDetails(
-                'plants_id', 'plants', 'plants_notification_channel',
+            android: AndroidNotificationDetails('plants_id', 'plants',
                 importance: Importance.high,
                 priority: Priority.high,
                 color: Colors.cyanAccent)),
@@ -55,14 +53,16 @@ class Notifications {
 
   //-------------| function to inicialize local notifications |---------------------------
   Future onSelectNotification(String payload) async {
-    showDialog(
-      context: _context,
-      builder: (_) {
-        return new AlertDialog(
-          title: Text("PayLoad"),
-          content: Text("Payload : $payload"),
-        );
-      },
-    );
+    print('Notification clicked');
+    return Future.value(0);
   }
+  // showDialog(
+  //   context: _context,
+  //   builder: (_) {
+  //     return new AlertDialog(
+  //       title: Text("PayLoad"),
+  //       content: Text("Payload : $payload"),
+  //     );
+  //   },
+  // );
 }

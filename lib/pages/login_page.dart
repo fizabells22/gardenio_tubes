@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:gardenio_tubes/constants.dart';
@@ -249,5 +250,28 @@ class _LoginPageState extends State<LoginPage> {
         print(e);
       }
     }
+  }
+
+  Future<User> signInWithEmail(String userEmail, String userPassword) async {
+    await Firebase.initializeApp();
+    User user;
+    try {
+      UserCredential userCredential = await _auth.signInWithEmailAndPassword(
+        email: userEmail,
+        password: userPassword,
+      );
+      user = userCredential.user!;
+
+      if (user != null) {
+        email = userEmail;
+      }
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
+        print('No user found for that email.');
+      } else if (e.code == 'wrong-password') {
+        print('Wrong password provided.');
+      }
+    }
+    return user;
   }
 }

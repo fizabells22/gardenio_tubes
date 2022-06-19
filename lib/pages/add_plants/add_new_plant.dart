@@ -294,7 +294,7 @@ class _AddNewPlantState extends State<AddNewPlant> {
 
   //--------------------------------------SAVE PLANT IN DATABASE---------------------------------------
   Future savePlant() async {
-    //check if plant time is lower than actual time
+    //   //check if plant time is lower than actual time
     if (setDate.millisecondsSinceEpoch <=
         DateTime.now().millisecondsSinceEpoch) {
       snackbar.showSnack(
