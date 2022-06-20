@@ -1,19 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:gardenio_tubes/models/plants.dart';
 import 'package:gardenio_tubes/pages/myplants/plants_card.dart';
 
 class PlantsList extends StatelessWidget {
-  final List<Plants> listOfPlants;
-  final Function setData;
-  final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin;
-  PlantsList(
-      this.listOfPlants, this.setData, this.flutterLocalNotificationsPlugin);
+  late final List<Plants> listOfPlants;
+  late final Function setData;
+ 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
       itemBuilder: (context, index) => PlantsCard(
-          listOfPlants[index], setData, flutterLocalNotificationsPlugin),
+          listOfPlants[index], setData),
       itemCount: listOfPlants.length,
       shrinkWrap: true,
       physics: NeverScrollableScrollPhysics(),

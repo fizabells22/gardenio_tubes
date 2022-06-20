@@ -1,21 +1,17 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:gardenio_tubes/pages/add_plants/add_new_plant.dart';
 import 'package:gardenio_tubes/pages/login_page.dart';
 import 'package:gardenio_tubes/pages/first_screen.dart';
 import 'package:gardenio_tubes/pages/home_page.dart';
+import 'package:gardenio_tubes/pages/news_page/body_news.dart';
 import 'package:gardenio_tubes/pages/news_page/categories_news.dart';
 import 'package:gardenio_tubes/pages/recom_page.dart';
 import 'package:gardenio_tubes/pages/register_page.dart';
 import 'package:gardenio_tubes/pages/simpleplant.dart';
 
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
   runApp(MyApp());
 }
-
-final navigatorKey = GlobalKey<NavigatorState>();
 
 class MyApp extends StatelessWidget {
   @override
@@ -27,12 +23,6 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         home: FirstScreen(),
-        routes: <String, WidgetBuilder>{
-          "Login": (BuildContext context) => LoginPage(),
-          "SignUp": (BuildContext context) => RegisterPage(),
-          "/": (context) => FirstScreen(),
-          "/home": (context) => HomeScreen(),
-          "/add_new_plant": (context) => AddNewPlant(),
-        });
+      );
   }
 }
