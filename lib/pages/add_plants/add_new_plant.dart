@@ -1,7 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-import 'package:gardenio_tubes/database/repository.dart';
+import 'package:gardenio_tubes/database/dbhelper.dart';
 import 'package:gardenio_tubes/models/jenis_plants.dart';
 import 'package:gardenio_tubes/models/plants.dart';
 import 'package:gardenio_tubes/notifications/notifications.dart';
@@ -50,7 +50,7 @@ class _AddNewPlantState extends State<AddNewPlant> {
   //==========================================
 
   //-------------- Database and notifications ------------------
-  final Repository _repository = Repository();
+  final DbHelper _dbHelper = DbHelper();
   final Notifications _notifications = Notifications();
 
   //============================================================
@@ -297,8 +297,8 @@ class _AddNewPlantState extends State<AddNewPlant> {
     //   //check if plant time is lower than actual time
     if (setDate.millisecondsSinceEpoch <=
         DateTime.now().millisecondsSinceEpoch) {
-      snackbar.showSnack(
-          "Check your plant reminder time and date", _scaffoldKey, null);
+      // snackbar.showSnack(
+      //     "Check your plant reminder time and date", _scaffoldKey, null);
     } else {
       //create pill object
       Plants plant = Plants(
@@ -314,17 +314,21 @@ class _AddNewPlantState extends State<AddNewPlant> {
       //---------------------| Save as many plants as many user checks |----------------------
       for (int i = 0; i < howManyWeeks; i++) {
         dynamic result =
-            await _repository.insertData("Plants", plant.plantToMap());
+            await _dbHelper.insertData("Plants", plant.plantToMap());
         if (result == null) {
-          snackbar.showSnack("Something went wrong", _scaffoldKey, null);
+          // snackbar.showSnack("Something went wrong", _scaffoldKey, null);
           return;
         } else {
           //set the notification schedule
           tz.initializeTimeZones();
           tz.setLocalLocation(tz.getLocation('Europe/Warsaw'));
           await _notifications.showNotification(
-              plant.id,
-              plant.name + " " + plant.plantsForm + " " + plant.howManyWeeks,
+              plant.id.toString(),
+              plant.name +
+                  " " +
+                  plant.plantsForm +
+                  " " +
+                  plant.howManyWeeks.toString(),
               time,
               plant.notifyId,
               flutterLocalNotificationsPlugin);
@@ -334,7 +338,7 @@ class _AddNewPlantState extends State<AddNewPlant> {
         }
       }
       //---------------------------------------------------------------------------------------
-      snackbar.showSnack("Saved", _scaffoldKey, null());
+      // snackbar.showSnack("Saved", _scaffoldKey, null);
       Navigator.pop(context);
     }
   }

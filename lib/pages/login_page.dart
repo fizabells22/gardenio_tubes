@@ -31,24 +31,6 @@ class _LoginPageState extends State<LoginPage> {
     this.checkAuthentification();
   }
 
-  showError(String errormessage) {
-    showDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return AlertDialog(
-            title: Text('ERROR'),
-            content: Text(errormessage),
-            actions: <Widget>[
-              FlatButton(
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
-                  child: Text('OK'))
-            ],
-          );
-        });
-  }
-
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -189,7 +171,7 @@ class _LoginPageState extends State<LoginPage> {
                                     fontWeight: FontWeight.w500),
                               ),
                             ),
-                            onPressed: Login),
+                            onPressed: login),
                       ),
                       Text(
                         'or',
@@ -236,42 +218,34 @@ class _LoginPageState extends State<LoginPage> {
     ));
   }
 
-  Future<void> Login() async {
-    final formState = _formKey.currentState;
-    if (formState!.validate()) {
-      formState.save();
+  login() async {
+    if (_formKey.currentState!.validate()) {
+      _formKey.currentState!.save();
+
       try {
-        await FirebaseAuth.instance
-            .signInWithEmailAndPassword(email: _email, password: _password);
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => HomeScreen()));
+        await _auth.signInWithEmailAndPassword(
+            email: _email, password: _password);
       } catch (e) {
-        //  showError(e.message);
         print(e);
       }
     }
   }
 
-  Future<User> signInWithEmail(String userEmail, String userPassword) async {
-    await Firebase.initializeApp();
-    User user;
-    try {
-      UserCredential userCredential = await _auth.signInWithEmailAndPassword(
-        email: userEmail,
-        password: userPassword,
-      );
-      user = userCredential.user!;
-
-      if (user != null) {
-        email = userEmail;
-      }
-    } on FirebaseAuthException catch (e) {
-      if (e.code == 'user-not-found') {
-        print('No user found for that email.');
-      } else if (e.code == 'wrong-password') {
-        print('Wrong password provided.');
-      }
-    }
-    return user;
+  showError(String errormessage) {
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text('ERROR'),
+            content: Text(errormessage),
+            actions: <Widget>[
+              FlatButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: Text('OK'))
+            ],
+          );
+        });
   }
 }

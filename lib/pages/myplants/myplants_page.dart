@@ -8,7 +8,7 @@ import 'package:gardenio_tubes/models/plants.dart';
 import 'package:gardenio_tubes/pages/myplants/calender.dart';
 import 'package:gardenio_tubes/pages/myplants/plants_list.dart';
 import '../../notifications/notifications.dart';
-import '../../database/repository.dart';
+import '../../database/dbhelper.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -23,12 +23,12 @@ class _HomeState extends State<Home> {
 
   //--------------------| List of Plants from database |----------------------
   List<Plants> allListOfPlants = <Plants>[];
-  final Repository _repository = Repository();
+  final DbHelper _dbHelper = DbHelper();
   List<Plants> dailyPlants = <Plants>[];
   //=========================================================================
 
   //-----------------| Calendar days |------------------
-  final CalendarDayModel _days = CalendarDayModel();
+  // final CalendarDayModel _days = CalendarDayModel();
   late List<CalendarDayModel> _daysList;
   //====================================================
 
@@ -36,12 +36,12 @@ class _HomeState extends State<Home> {
   int _lastChooseDay = 0;
 
   @override
-  void initState() {
-    super.initState();
-    initNotifies();
-    setData();
-    _daysList = _days.getCurrentDays();
-  }
+  // void initState() {
+  //   super.initState();
+  //   initNotifies();
+  //   setData();
+  //   _daysList = _days.getCurrentDays();
+  // }
 
   //init notifications
   Future initNotifies() async => flutterLocalNotificationsPlugin =
@@ -50,8 +50,8 @@ class _HomeState extends State<Home> {
   //--------------------GET ALL DATA FROM DATABASE---------------------
   Future setData() async {
     allListOfPlants.clear();
-    (await _repository.getAllData("Plants"))?.forEach((plantMap) {
-      allListOfPlants.add(Plants().plantMapToObject(plantMap));
+    (await _dbHelper.getAllData("Plants"))?.forEach((plantMap) {
+      // allListOfPlants.add(Plants(howManyWeeks: null, name: '', id: null, notifyId: null, plantsForm: '', time: null).plantMapToObject(plantMap));
     });
     chooseDay(_daysList[_lastChooseDay]);
   }

@@ -6,6 +6,18 @@ class Plants {
   int time;
   int notifyId;
 
+  int get _id => id;
+  String get _name => this.name;
+  set _name(String value) => this.name = value;
+  get _howManyWeeks => this.howManyWeeks;
+  set _howManyWeeks(value) => this.howManyWeeks = value;
+  get _plantsForm => this.plantsForm;
+  set _plantsForm(value) => this.plantsForm = value;
+  get _time => this.time;
+  set _time(value) => this.time = value;
+  get _notifyId => this.notifyId;
+  set _notifyId(value) => this.notifyId = value;
+
   Plants(
       {required this.id,
       required this.howManyWeeks,
@@ -17,7 +29,7 @@ class Plants {
   //------------------set plants to map-------------------
 
   Map<String, dynamic> plantToMap() {
-    Map<String, dynamic> map = Map();
+    Map<String, dynamic> map = Map<String, dynamic>();
     map['id'] = this.id;
     map['name'] = this.name;
     map['howManyWeeks'] = this.howManyWeeks;
@@ -28,14 +40,14 @@ class Plants {
   }
 
   //---------------------create plants object from map---------------------
-  Plants plantMapToObject(Map<String, dynamic> plantMap) {
+  Plants plantMapToObject(Map<String, dynamic> map) {
     return Plants(
-        id: plantMap['id'],
-        name: plantMap['name'],
-        howManyWeeks: plantMap['howManyWeeks'],
-        plantsForm: plantMap['medicineForm'],
-        time: plantMap['time'],
-        notifyId: plantMap['notifyId']);
+        id: map['id'],
+        name: map['name'],
+        howManyWeeks: map['howManyWeeks'],
+        plantsForm: map['plantsForm'],
+        time: map['time'],
+        notifyId: map['notifyId']);
   }
 
   //---------------------| Get the plants image path |-------------------------

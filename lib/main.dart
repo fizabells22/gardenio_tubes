@@ -27,7 +27,6 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         home: FirstScreen(),
-        initialRoute: "/",
         routes: <String, WidgetBuilder>{
           "Login": (BuildContext context) => LoginPage(),
           "SignUp": (BuildContext context) => RegisterPage(),

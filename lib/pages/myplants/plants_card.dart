@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:gardenio_tubes/notifications/notifications.dart';
 import 'package:intl/intl.dart';
-import 'package:gardenio_tubes/database/repository.dart';
+import 'package:gardenio_tubes/database/dbhelper.dart';
 import 'package:gardenio_tubes/models/plants.dart';
 
 class PlantsCard extends StatelessWidget {
@@ -100,7 +100,7 @@ class PlantsCard extends StatelessWidget {
                   child: Text("Delete",
                       style: TextStyle(color: Theme.of(context).primaryColor)),
                   onPressed: () async {
-                    await Repository().deleteData('Plants', plantId);
+                    await DbHelper().deleteData('Plants', plantId);
                     await Notifications().removeNotify(
                         notifyId, flutterLocalNotificationsPlugin);
                     setData();

@@ -53,16 +53,17 @@ class Notifications {
 
   //-------------| function to inicialize local notifications |---------------------------
   Future onSelectNotification(String payload) async {
-    print('Notification clicked');
-    return Future.value(0);
+    //   print('Notification clicked');
+    //   return Future.value(0);
+    // }
+    showDialog(
+      context: _context,
+      builder: (_) {
+        return new AlertDialog(
+          title: const Text("PayLoad"),
+          content: Text("Payload : $payload"),
+        );
+      },
+    );
   }
-  // showDialog(
-  //   context: _context,
-  //   builder: (_) {
-  //     return new AlertDialog(
-  //       title: Text("PayLoad"),
-  //       content: Text("Payload : $payload"),
-  //     );
-  //   },
-  // );
 }
