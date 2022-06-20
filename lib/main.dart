@@ -1,28 +1,36 @@
+// import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:gardenio_tubes/pages/add_plants/add_new_plant.dart';
+// ignore: unused_import
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:gardenio_tubes/constants.dart';
 import 'package:gardenio_tubes/pages/login_page.dart';
 import 'package:gardenio_tubes/pages/first_screen.dart';
 import 'package:gardenio_tubes/pages/home_page.dart';
-import 'package:gardenio_tubes/pages/news_page/body_news.dart';
 import 'package:gardenio_tubes/pages/news_page/categories_news.dart';
 import 'package:gardenio_tubes/pages/recom_page.dart';
 import 'package:gardenio_tubes/pages/register_page.dart';
 import 'package:gardenio_tubes/pages/simpleplant.dart';
+import 'package:gardenio_tubes/screens/detail_screen.dart';
+import 'package:gardenio_tubes/screens/home_screen.dart';
+import 'package:gardenio_tubes/widgets/bottom_nav_bar.dart';
+import 'package:gardenio_tubes/widgets/category_card.dart';
+import 'package:gardenio_tubes/widgets/search_bar.dart';
 
-Future<void> main() async {
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Flutter Login',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        home: FirstScreen(),
-      );
+      debugShowCheckedModeBanner: false,
+      title: 'Gardenioo',
+      theme: ThemeData(
+        fontFamily: "Nunito",
+        scaffoldBackgroundColor: kBackgroundColor,
+        textTheme: Theme.of(context).textTheme.apply(displayColor: kTextColor),
+      ),
+      home: HomeScreen(),
+    );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class SearchBar extends StatelessWidget {
   const SearchBar({
@@ -17,7 +18,7 @@ class SearchBar extends StatelessWidget {
       child: TextField(
         decoration: InputDecoration(
           hintText: "Search",
-          icon: Image.asset("assets/images/search.png"),
+          icon: SvgPicture.asset("assets/icons/search.svg"),
           border: InputBorder.none,
         ),
       ),
