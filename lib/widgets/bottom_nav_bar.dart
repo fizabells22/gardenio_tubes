@@ -19,7 +19,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
-      height: 80,
+      height: 60,
       color: Colors.white,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -36,9 +36,18 @@ class _BottomNavBarState extends State<BottomNavBar> {
             child: Column(
               children: [
                 SvgPicture.asset(
-                  '"assets/icons/icons8-home.svg"',
+                  'assets/icons/icons8-home.svg',
+                  height: 20.0,
+                  width: 20.0,
+                  allowDrawingOutsideViewBox: true,
                 ),
-                Text('Home Page')
+                Text(
+                  'Home Page',
+                  style: TextStyle(
+                    fontSize: 10.0,
+                    fontFamily: 'Poppins',
+                  ),
+                )
               ],
             ),
           ),
@@ -55,8 +64,17 @@ class _BottomNavBarState extends State<BottomNavBar> {
               children: [
                 SvgPicture.asset(
                   'assets/icons/plants.svg',
+                  height: 20.0,
+                  width: 20.0,
+                  allowDrawingOutsideViewBox: true,
                 ),
-                Text('My Plants')
+                Text(
+                  'My Plants',
+                  style: TextStyle(
+                    fontSize: 10.0,
+                    fontFamily: 'Poppins',
+                  ),
+                )
               ],
             ),
           ),
@@ -73,8 +91,17 @@ class _BottomNavBarState extends State<BottomNavBar> {
               children: [
                 SvgPicture.asset(
                   'assets/icons/settings.svg',
+                  height: 18.0,
+                  width: 18.0,
+                  allowDrawingOutsideViewBox: true,
                 ),
-                Text('Settings')
+                Text(
+                  'Settings',
+                  style: TextStyle(
+                    fontSize: 10.0,
+                    fontFamily: 'Poppins',
+                  ),
+                )
               ],
             ),
           ),

@@ -55,10 +55,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   Text(
                     "Welcome to Gardenio!",
-                    style: Theme.of(context)
-                        .textTheme
-                        .headline4!
-                        .copyWith(fontWeight: FontWeight.w900),
+                    style: Theme.of(context).textTheme.headline4!.copyWith(
+                          fontWeight: FontWeight.w900,
+                          color: Color.fromARGB(255, 255, 255, 255),
+                          fontFamily: 'Poppins',
+                        ),
                   ),
                   SearchBar(),
                   Expanded(

@@ -17,11 +17,7 @@ class DetailsScreen extends StatelessWidget {
           Container(
             height: size.height * .45,
             decoration: BoxDecoration(
-              color: kBlueLightColor,
-              image: DecorationImage(
-                image: AssetImage("assets/images/news2.jpg"),
-                fit: BoxFit.fitWidth,
-              ),
+              color: Colors.green.shade600,
             ),
           ),
           SafeArea(
@@ -35,22 +31,22 @@ class DetailsScreen extends StatelessWidget {
                       height: size.height * 0.05,
                     ),
                     Text(
-                      "Meditation",
-                      style: Theme.of(context)
-                          .textTheme
-                          .headline4!
-                          .copyWith(fontWeight: FontWeight.w900),
-                    ),
-                    SizedBox(height: 10),
-                    Text(
-                      "3-10 MIN Course",
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      "News",
+                      style: Theme.of(context).textTheme.headline4!.copyWith(
+                            fontWeight: FontWeight.w900,
+                            fontFamily: 'Poppins',
+                            color: Color.fromARGB(255, 255, 255, 255),
+                          ),
                     ),
                     SizedBox(height: 10),
                     SizedBox(
                       width: size.width * .6, // it just take 60% of total width
                       child: Text(
-                        "Live happier and healthier by learning the fundamentals of meditation and mindfulness",
+                        "It's the time to upgrade your knowledge by reading the insightful news!",
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 255, 255, 255),
+                          fontFamily: 'Poppins',
+                        ),
                       ),
                     ),
                     SizedBox(
@@ -90,7 +86,7 @@ class DetailsScreen extends StatelessWidget {
                     ),
                     SizedBox(height: 20),
                     Text(
-                      "Meditation",
+                      "Trending News",
                       style: Theme.of(context)
                           .textTheme
                           .headline6!
@@ -115,7 +111,7 @@ class DetailsScreen extends StatelessWidget {
                       child: Row(
                         children: <Widget>[
                           SvgPicture.asset(
-                            "assets/icons/camera.svg",
+                            "assets/icons/setting.svg",
                           ),
                           SizedBox(width: 20),
                           Expanded(
