@@ -12,15 +12,17 @@ class _RecomPageState extends State<RecomPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-    appBar: AppBar(
-     leading: GestureDetector(
-          child: Icon(
-            Icons.arrow_back_ios,
-          ),
-          onTap: () {
-            Navigator.pop(context);
-          }),
-          ),
+      appBar: AppBar(
+        elevation: 10,
+        backgroundColor: Colors.grey[500],
+        leading: GestureDetector(
+            child: Icon(
+              Icons.arrow_back_ios,
+            ),
+            onTap: () {
+              Navigator.pop(context);
+            }),
+      ),
       body: Container(
         width: double.infinity,
         decoration: const BoxDecoration(

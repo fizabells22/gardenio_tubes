@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gardenio_tubes/constants.dart';
 import 'package:gardenio_tubes/pages/login_page.dart';
-import 'home_page.dart';
 
 class RegisterPage extends StatefulWidget {
   @override

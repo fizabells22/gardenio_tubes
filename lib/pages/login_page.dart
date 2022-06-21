@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gardenio_tubes/constants.dart';
-import 'package:gardenio_tubes/pages/home_page.dart';
 import 'package:gardenio_tubes/pages/register_page.dart';
 import 'package:gardenio_tubes/screens/home_screen.dart';
 
@@ -54,7 +53,7 @@ Widget _titleDescription() {
       Text(
         "Login Into Gardenio",
         style: TextStyle(
-            color: Colors.green.shade600,
+            color: Color.fromRGBO(67, 160, 71, 1),
             fontSize: 20,
             fontFamily: 'Poppins',
             fontWeight: FontWeight.w700),

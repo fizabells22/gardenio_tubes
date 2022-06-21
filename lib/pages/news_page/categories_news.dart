@@ -15,9 +15,11 @@ class _CategoriesState extends State<Categories> {
   Widget build(BuildContext context) {
     Size SizeConfig = MediaQuery.of(context).size;
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: SizeConfig.height * 2),
+      padding: EdgeInsets.symmetric(
+          vertical: SizeConfig.height * 2, horizontal: SizeConfig.width * 2),
       child: SizedBox(
-        height: SizeConfig.height * 3.5, // 35
+        height: SizeConfig.height * 3.5,
+        width: SizeConfig.width * 3.5, // 35
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemCount: categories.length,
@@ -41,7 +43,7 @@ class _CategoriesState extends State<Categories> {
         alignment: Alignment.center,
         margin: EdgeInsets.only(left: SizeConfig.height * 2),
         padding: EdgeInsets.symmetric(
-          horizontal: SizeConfig.height * 2, //20
+          horizontal: SizeConfig.width * 2, //20
           vertical: SizeConfig.height * 0.5, //5
         ),
         decoration: BoxDecoration(

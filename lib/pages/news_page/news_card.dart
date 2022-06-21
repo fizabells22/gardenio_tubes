@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-// import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gardenio_tubes/models/news_list.dart';
 
 class NewsCard extends StatelessWidget {

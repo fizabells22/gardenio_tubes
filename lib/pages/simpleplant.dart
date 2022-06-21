@@ -15,8 +15,8 @@ class listSimpleState extends State<listSimple> {
     "Pothos",
     "Cactus",
     "Spider Plant",
-    "Jade Plant"
-        "Peace Lily"
+    "Jade Plant",
+    "Peace Lily",
   ];
 
   var imgList = [
@@ -26,7 +26,7 @@ class listSimpleState extends State<listSimple> {
     "assets/images/1. pothos.jpg",
     "assets/images/1. cactus.jpg",
     "assets/images/1. spider plant.jpg",
-    "assets/images/1. peace lily.jpg"
+    "assets/images/1. peace lily.jpg",
   ];
 
   @override

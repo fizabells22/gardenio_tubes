@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-// ignore: unused_import
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gardenio_tubes/constants.dart';
 import 'package:gardenio_tubes/widgets/bottom_nav_bar.dart';
@@ -32,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
             // Here the height of the container is 45% of our total height
             height: size.height * .45,
             decoration: BoxDecoration(
-              color: Color(0xFFF5CEB8),
+              color: Colors.green.shade600,
             ),
           ),
           SafeArea(
@@ -48,14 +47,14 @@ class _HomeScreenState extends State<HomeScreen> {
                       height: 52,
                       width: 52,
                       decoration: BoxDecoration(
-                        color: Color(0xFFF2BEA1),
+                        color: Colors.green.shade600,
                         shape: BoxShape.circle,
                       ),
                       child: SvgPicture.asset("assets/icons/menu.svg"),
                     ),
                   ),
                   Text(
-                    "Good Morningg \nSirr",
+                    "Welcome to Gardenio!",
                     style: Theme.of(context)
                         .textTheme
                         .headline4!
@@ -70,25 +69,24 @@ class _HomeScreenState extends State<HomeScreen> {
                       mainAxisSpacing: 20,
                       children: <Widget>[
                         CategoryCard(
-                          title: "Homepage",
-                          svgSrc: "assets/icons/camera.svg",
+                          title: "Home Page",
+                          svgSrc: "assets/icons/icons8-home.svg",
                           press: () {},
                         ),
                         CategoryCard(
-                          title: "Newspage",
-                          svgSrc: "assets/icons/camera.svg",
+                          title: "News Page",
+                          svgSrc: "assets/icons/news.svg",
                           press: () {},
                         ),
                         CategoryCard(
-                          title: "Recompage",
-                          svgSrc: "assets/icons/plant.svg",
+                          title: "Recom Page",
+                          svgSrc: "assets/icons/recom.svg",
                           press: () {},
                         ),
                         CategoryCard(
-                          title: "Plants",
-                          svgSrc: "assets/icons/plant.svg",
-                          press: () {},
-                        ),
+                            title: "Plants",
+                            svgSrc: "assets/icons/plant.svg",
+                            press: () {}),
                       ],
                     ),
                   ),
