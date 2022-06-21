@@ -58,28 +58,20 @@ class DetailsScreen extends StatelessWidget {
                       runSpacing: 20,
                       children: <Widget>[
                         SeassionCard(
-                          seassionNum: 1,
+                          kataKunci: "All",
                           isDone: true,
                           press: () {},
                         ),
                         SeassionCard(
-                          seassionNum: 2,
+                          kataKunci: "Plant",
                           press: () {},
                         ),
                         SeassionCard(
-                          seassionNum: 3,
+                          kataKunci: "Trend",
                           press: () {},
                         ),
                         SeassionCard(
-                          seassionNum: 4,
-                          press: () {},
-                        ),
-                        SeassionCard(
-                          seassionNum: 5,
-                          press: () {},
-                        ),
-                        SeassionCard(
-                          seassionNum: 6,
+                          kataKunci: "Monstera",
                           press: () {},
                         ),
                       ],
@@ -110,8 +102,10 @@ class DetailsScreen extends StatelessWidget {
                       ),
                       child: Row(
                         children: <Widget>[
-                          SvgPicture.asset(
-                            "assets/icons/setting.svg",
+                          Image.asset(
+                            "assets/images/judul1.jpg",
+                            height: 30.0,
+                            width: 30.0,
                           ),
                           SizedBox(width: 20),
                           Expanded(
@@ -120,16 +114,86 @@ class DetailsScreen extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
                                 Text(
-                                  "Basic 2",
-                                  style: Theme.of(context).textTheme.subtitle1,
+                                  "Yuk Intip Tips Cegah Rontok pada Tanaman!",
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .headline4!
+                                      .copyWith(
+                                        fontFamily: 'Poppins',
+                                      ),
                                 ),
-                                Text("Start your deepen you practice")
+                                Text(
+                                  "Tutorial singkat merawat tanaman agar bebas dari rontok",
+                                  style: TextStyle(
+                                    fontFamily: 'Poppins',
+                                  ),
+                                )
                               ],
                             ),
                           ),
                           Padding(
                             padding: EdgeInsets.all(10),
-                            child: SvgPicture.asset("assets/icons/search.svg"),
+                            child: Image.asset(
+                              "assets/images/best2022.jpg",
+                              height: 30.0,
+                              width: 30.0,
+                            ),
+                          ),
+                          SizedBox(width: 20),
+                          Expanded(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Text(
+                                  "Best of 2022",
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .headline4!
+                                      .copyWith(
+                                        fontFamily: 'Poppins',
+                                      ),
+                                ),
+                                Text(
+                                  "Trend tanaman hias 2022",
+                                  style: TextStyle(
+                                    fontFamily: 'Poppins',
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.all(10),
+                            child: Image.asset(
+                              "assets/images/bungatelang.jpg",
+                              height: 30.0,
+                              width: 30.0,
+                            ),
+                          ),
+                          SizedBox(width: 20),
+                          Expanded(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Text(
+                                  "Cara Mudah Menanam Bunga Telang",
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .headline4!
+                                      .copyWith(
+                                        fontFamily: 'Poppins',
+                                      ),
+                                ),
+                                Text(
+                                  " Bunga telang atau yang memiliki nama latin Clitoria Ternatea.",
+                                  style: TextStyle(
+                                    fontFamily: 'Poppins',
+                                  ),
+                                )
+                              ],
+                            ),
                           ),
                         ],
                       ),
@@ -146,12 +210,12 @@ class DetailsScreen extends StatelessWidget {
 }
 
 class SeassionCard extends StatelessWidget {
-  final int seassionNum;
+  final String kataKunci;
   final bool isDone;
   final Function press;
   const SeassionCard({
     Key? key,
-    required this.seassionNum,
+    required this.kataKunci,
     this.isDone = false,
     required this.press,
   }) : super(key: key);
@@ -186,23 +250,27 @@ class SeassionCard extends StatelessWidget {
                 child: Row(
                   children: <Widget>[
                     Container(
-                      height: 42,
-                      width: 43,
+                      height: 32,
+                      width: 33,
                       decoration: BoxDecoration(
                         color: isDone ? kBlueColor : Colors.white,
                         shape: BoxShape.circle,
                         border: Border.all(color: kBlueColor),
                       ),
-                      child: Icon(
-                        Icons.play_arrow,
-                        color: isDone ? Colors.white : kBlueColor,
-                      ),
+                      // child: Icon(
+                      //   Icons.play_arrow,
+                      //   color: isDone ? Colors.white : kBlueColor,
+                      // ),
                     ),
                     SizedBox(width: 10),
                     Text(
-                      "Session $seassionNum",
-                      style: Theme.of(context).textTheme.subtitle1,
-                    )
+                      "$kataKunci",
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 255, 255, 255),
+                        fontFamily: 'Poppins',
+                        fontSize: 25.0,
+                      ),
+                    ),
                   ],
                 ),
               ),
