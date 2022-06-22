@@ -42,7 +42,7 @@ class DetailsScreen extends StatelessWidget {
                     SizedBox(
                       width: size.width * .6, // it just take 60% of total width
                       child: Text(
-                        "It's the time to upgrade your knowledge by reading the insightful news!",
+                        "It's time to upgrade your knowledge by reading the insightful news!",
                         style: TextStyle(
                           color: Color.fromARGB(255, 255, 255, 255),
                           fontFamily: 'Poppins',
@@ -76,7 +76,7 @@ class DetailsScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(height: 20),
+                    SizedBox(height: 30),
                     Text(
                       "Trending News",
                       style: Theme.of(context)
@@ -250,25 +250,17 @@ class SeassionCard extends StatelessWidget {
                 child: Row(
                   children: <Widget>[
                     Container(
-                      height: 32,
-                      width: 33,
-                      decoration: BoxDecoration(
-                        color: isDone ? kBlueColor : Colors.white,
-                        shape: BoxShape.circle,
-                        border: Border.all(color: kBlueColor),
-                      ),
-                      // child: Icon(
-                      //   Icons.play_arrow,
-                      //   color: isDone ? Colors.white : kBlueColor,
-                      // ),
+                      height: 20,
+                      width: 22,
                     ),
                     SizedBox(width: 10),
                     Text(
                       "$kataKunci",
+                      textAlign: TextAlign.center,
                       style: TextStyle(
-                        color: Color.fromARGB(255, 255, 255, 255),
+                        color: Colors.black87,
                         fontFamily: 'Poppins',
-                        fontSize: 25.0,
+                        fontSize: 15.0,
                       ),
                     ),
                   ],

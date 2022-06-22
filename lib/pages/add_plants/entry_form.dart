@@ -92,8 +92,8 @@ class _EntryFormState extends State<EntryForm> {
                   // tombol simpan
                   Expanded(
                     child: RaisedButton(
-                        color: Theme.of(context).primaryColorDark,
-                        textColor: Theme.of(context).primaryColorLight,
+                        color: Colors.grey[500],
+                        textColor: Colors.white,
                         child: Text(
                           'Save',
                           textScaleFactor: 1.5,
@@ -119,8 +119,8 @@ class _EntryFormState extends State<EntryForm> {
                   // tombol batal
                   Expanded(
                     child: RaisedButton(
-                      color: Theme.of(context).primaryColorDark,
-                      textColor: Theme.of(context).primaryColorLight,
+                      color: Colors.grey[500],
+                      textColor: Colors.white,
                       child: Text(
                         'Cancel',
                         textScaleFactor: 1.5,

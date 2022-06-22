@@ -2,6 +2,7 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 import 'package:flutter/material.dart';
+import 'package:gardenio_tubes/pages/add_plants/entry_form.dart';
 
 class PlantsPage extends StatefulWidget {
   @override
@@ -23,11 +24,12 @@ class _PlantsPageState extends State<PlantsPage> {
               fontSize: 21,
               fontFamily: 'Poppins'),
         ),
-        elevation: 10,
         backgroundColor: Colors.grey[500],
         leading: GestureDetector(
             child: Icon(
               Icons.arrow_back_ios,
+              color: Colors.white,
+              size: 24.0,
             ),
             onTap: () {
               Navigator.pop(context);
@@ -35,13 +37,6 @@ class _PlantsPageState extends State<PlantsPage> {
       ),
       body: Column(
         children: <Widget>[
-          Container(
-            // Here the height of the container is 45% of our total height
-            height: size.height * .45,
-            decoration: BoxDecoration(
-              color: Colors.grey[500],
-            ),
-          ),
           SafeArea(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -58,7 +53,20 @@ class _PlantsPageState extends State<PlantsPage> {
                         color: Colors.grey[500],
                         shape: BoxShape.circle,
                       ),
-                      child: Icon(Icons.add),
+                      child: GestureDetector(
+                          child: Icon(
+                            Icons.add,
+                            color: Colors.white,
+                            size: 24.0,
+                          ),
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) {
+                                return EntryForm();
+                              }),
+                            );
+                          }),
                     ),
                   ),
                   //   children : [
