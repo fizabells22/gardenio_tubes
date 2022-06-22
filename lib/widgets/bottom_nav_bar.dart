@@ -5,6 +5,7 @@ import 'package:gardenio_tubes/pages/news_page/categories_news.dart';
 import 'package:gardenio_tubes/pages/recom_page.dart';
 import 'package:gardenio_tubes/screens/detail_screen.dart';
 import 'package:gardenio_tubes/screens/home_screen.dart';
+import 'package:gardenio_tubes/screens/profile/profile_screen.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({
@@ -84,7 +85,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) {
-                  return const DetailsScreen();
+                  return ProfileScreen();
                 }),
               );
             }),
@@ -97,7 +98,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
                   allowDrawingOutsideViewBox: true,
                 ),
                 Text(
-                  'Settings',
+                  'Profile',
                   style: TextStyle(
                     fontSize: 10.0,
                     fontFamily: 'Poppins',
