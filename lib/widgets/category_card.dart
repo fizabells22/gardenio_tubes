@@ -43,8 +43,8 @@ class CategoryCard extends StatelessWidget {
                   const Spacer(),
                   SvgPicture.asset(
                     svgSrc,
-                    height: 25.0,
-                    width: 25.0,
+                    height: 100.0,
+                    width: 100.0,
                   ),
                   const Spacer(),
                   Text(

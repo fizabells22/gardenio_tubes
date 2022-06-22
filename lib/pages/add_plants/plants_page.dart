@@ -24,7 +24,7 @@ class _PlantsPageState extends State<PlantsPage> {
               fontSize: 21,
               fontFamily: 'Poppins'),
         ),
-        backgroundColor: Colors.grey[500],
+        backgroundColor: Colors.green.shade600,
         leading: GestureDetector(
             child: Icon(
               Icons.arrow_back_ios,
@@ -35,61 +35,60 @@ class _PlantsPageState extends State<PlantsPage> {
               Navigator.pop(context);
             }),
       ),
-      body: Column(
-        children: <Widget>[
-          SafeArea(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Align(
-                    alignment: Alignment.bottomRight,
-                    child: Container(
-                      alignment: Alignment.center,
-                      height: 52,
-                      width: 52,
-                      decoration: BoxDecoration(
-                        color: Colors.grey[500],
-                        shape: BoxShape.circle,
-                      ),
-                      child: GestureDetector(
-                          child: Icon(
-                            Icons.add,
-                            color: Colors.white,
-                            size: 24.0,
-                          ),
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) {
-                                return EntryForm();
-                              }),
-                            );
-                          }),
+      body: Container(
+        child: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Align(
+                  alignment: Alignment.bottomRight,
+                  child: Container(
+                    alignment: Alignment.center,
+                    height: 52,
+                    width: 52,
+                    decoration: BoxDecoration(
+                      color: Colors.green.shade600,
+                      shape: BoxShape.circle,
                     ),
+                    child: GestureDetector(
+                        child: Icon(
+                          Icons.add,
+                          color: Colors.white,
+                          size: 24.0,
+                        ),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) {
+                              return EntryForm();
+                            }),
+                          );
+                        }),
                   ),
-                  //   children : [
-                  //     Expanded(child: createListView(),),
-                  //     Container(
-                  //     alignment: Alignment.bottomCenter,
-                  //     child: SizedBox(
-                  //           width: double.infinity,
-                  //           child: RaisedButton(
-                  //           child: Text("Add Plant", style: TextStyle(
-                  //         color: Colors.white, fontFamily: 'Poppins'),
-                  //   ),),
-                  //           onPressed: () async {
-                  //         },
-                  //     ),
-                  //   ),
-                  //   ),
-                  // ]),
-                ],
-              ),
+                ),
+                //   children : [
+                //     Expanded(child: createListView(),),
+                //     Container(
+                //     alignment: Alignment.bottomCenter,
+                //     child: SizedBox(
+                //           width: double.infinity,
+                //           child: RaisedButton(
+                //           child: Text("Add Plant", style: TextStyle(
+                //         color: Colors.white, fontFamily: 'Poppins'),
+                //   ),),
+                //           onPressed: () async {
+                //         },
+                //     ),
+                //   ),
+                //   ),
+                // ]),
+              ],
             ),
-          )
-        ],
+          ),
+        ),
       ),
     );
   }

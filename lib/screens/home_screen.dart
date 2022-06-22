@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gardenio_tubes/constants.dart';
+import 'package:gardenio_tubes/pages/add_plants/plants_page.dart';
+import 'package:gardenio_tubes/pages/complexplant.dart';
+import 'package:gardenio_tubes/pages/recom_page.dart';
+import 'package:gardenio_tubes/screens/detail_screen.dart';
 import 'package:gardenio_tubes/widgets/bottom_nav_bar.dart';
 import 'package:gardenio_tubes/widgets/category_card.dart';
 import 'package:gardenio_tubes/widgets/search_bar.dart';
@@ -69,25 +73,66 @@ class _HomeScreenState extends State<HomeScreen> {
                       crossAxisSpacing: 20,
                       mainAxisSpacing: 20,
                       children: <Widget>[
-                        CategoryCard(
-                          title: "Home Page",
-                          svgSrc: "assets/icons/icons8-home.svg",
-                          press: () {},
+                        GestureDetector(
+                          child: CategoryCard(
+                            title: "Home Page",
+                            svgSrc: "assets/icons/icons8-home.svg",
+                            press: () {},
+                          ),
+                          onTap: (() {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) {
+                                return HomeScreen();
+                              }),
+                            );
+                          }),
                         ),
-                        CategoryCard(
-                          title: "News Page",
-                          svgSrc: "assets/icons/news.svg",
-                          press: () {},
+                        GestureDetector(
+                          child: CategoryCard(
+                            title: "News Page",
+                            svgSrc: "assets/icons/news.svg",
+                            press: () {},
+                          ),
+                          onTap: (() {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) {
+                                return DetailsScreen();
+                              }),
+                            );
+                          }),
                         ),
-                        CategoryCard(
-                          title: "Recom Page",
-                          svgSrc: "assets/icons/recom.svg",
-                          press: () {},
+                        GestureDetector(
+                          child: CategoryCard(
+                            title: "Recom Page",
+                            svgSrc: "assets/icons/recom.svg",
+                            press: () {},
+                          ),
+                          onTap: (() {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) {
+                                return RecomPage();
+                              }),
+                            );
+                          }),
                         ),
-                        CategoryCard(
+                        GestureDetector(
+                          child: CategoryCard(
                             title: "Plants",
                             svgSrc: "assets/icons/plant.svg",
-                            press: () {}),
+                            press: () {},
+                          ),
+                          onTap: (() {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) {
+                                return PlantsPage();
+                              }),
+                            );
+                          }),
+                        ),
                       ],
                     ),
                   ),

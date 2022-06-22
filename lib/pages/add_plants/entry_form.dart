@@ -30,7 +30,7 @@ class _EntryFormState extends State<EntryForm> {
               color: Colors.white, fontWeight: FontWeight.w600, fontSize: 21),
         ),
         elevation: 10,
-        backgroundColor: Colors.grey[500],
+        backgroundColor: Colors.green.shade600,
       ),
       body: Padding(
         padding: EdgeInsets.only(top: 15.0, left: 10.0, right: 10.0),
@@ -92,7 +92,7 @@ class _EntryFormState extends State<EntryForm> {
                   // tombol simpan
                   Expanded(
                     child: RaisedButton(
-                        color: Colors.grey[500],
+                        color: Colors.green.shade600,
                         textColor: Colors.white,
                         child: Text(
                           'Save',
@@ -119,7 +119,7 @@ class _EntryFormState extends State<EntryForm> {
                   // tombol batal
                   Expanded(
                     child: RaisedButton(
-                      color: Colors.grey[500],
+                      color: Colors.green.shade600,
                       textColor: Colors.white,
                       child: Text(
                         'Cancel',

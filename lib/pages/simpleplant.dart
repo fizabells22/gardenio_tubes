@@ -33,21 +33,25 @@ class listSimpleState extends State<listSimple> {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width * 0.6;
     return Scaffold(
+      bottomNavigationBar: BottomNavBar(),
       appBar: AppBar(
-        leading: GestureDetector(
-            child: Icon(
-              Icons.arrow_back_ios,
-            ),
-            onTap: () {
-              Navigator.pop(context);
-            }),
+        // leading: GestureDetector(
+        //     child: Icon(
+        //       Icons.arrow_back_ios,
+        //     ),
+        //     onTap: () {
+        //       Navigator.pop(context);
+        //     }),
         title: Text(
           "Rekomendasi Tanaman Hias Tanpa Perawatan",
           style: TextStyle(
-              color: Colors.white, fontWeight: FontWeight.w600, fontSize: 21),
+              fontFamily: 'Poppins',
+              color: Colors.white,
+              fontWeight: FontWeight.w600,
+              fontSize: 21),
         ),
         elevation: 10,
-        backgroundColor: Colors.grey[500],
+        backgroundColor: Colors.green.shade600,
       ),
       // bottomNavigationBar: const BottomNavBar(),
       body: ListView.builder(

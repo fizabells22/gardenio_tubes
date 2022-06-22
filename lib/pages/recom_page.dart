@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gardenio_tubes/pages/complexplant.dart';
 import 'package:gardenio_tubes/pages/simpleplant.dart';
+// ignore: unused_import
 import 'package:gardenio_tubes/widgets/bottom_nav_bar.dart';
 
 class RecomPage extends StatefulWidget {
@@ -12,17 +13,17 @@ class _RecomPageState extends State<RecomPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 10,
-        backgroundColor: Colors.grey[500],
-        leading: GestureDetector(
-            child: Icon(
-              Icons.arrow_back_ios,
-            ),
-            onTap: () {
-              Navigator.pop(context);
-            }),
-      ),
+      bottomNavigationBar: BottomNavBar(),
+      // appBar: AppBar(
+      //     // leading: GestureDetector(
+      //     //     child: Icon(
+      //     //       Icons.arrow_back_ios,
+      //     //     ),
+      //     //     onTap: () {
+      //     //       Navigator.pop(context);
+      //     //     }),
+      //     // backgroundColor: Colors.grey[500],
+      //     ),
       body: Container(
         width: double.infinity,
         decoration: const BoxDecoration(
@@ -41,7 +42,7 @@ class _RecomPageState extends State<RecomPage> {
                   TextSpan(
                     text: "Select the perfect plants for your place",
                     style: TextStyle(
-                      color: Color.fromARGB(255, 250, 250, 250),
+                      color: Color.fromARGB(255, 255, 255, 255),
                       fontSize: 28,
                       fontWeight: FontWeight.bold,
                       fontFamily: 'Poppins',
