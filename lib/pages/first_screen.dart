@@ -1,6 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:gardenio_tubes/pages/login_page.dart';
 import 'package:gardenio_tubes/pages/register_page.dart';
+import 'package:gardenio_tubes/models/pengguna.dart';
+import 'package:http/http.dart' as http;
+
+class Pengguna {
+  int id;
+  String username;
+  String email;
+  String password;
+
+  Pengguna(
+      {required this.id,
+      required this.username,
+      required this.email,
+      required this.password});
+
+  factory Pengguna.fromJson(Map<String, dynamic> json) {
+    return Pengguna(
+        id: json['id'],
+        username: json['username'],
+        email: json['email'],
+        password: json['password']);
+  }
+}
+
+fetchPlants() async {
+  await http.get(Uri.parse('http://127.0.0.1:8000/api/pengguna'));
+}
 
 class FirstScreen extends StatefulWidget {
   @override

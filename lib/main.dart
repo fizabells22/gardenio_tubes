@@ -22,14 +22,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Gardenio',
-      theme: ThemeData(
-        fontFamily: "Poppins",
-        scaffoldBackgroundColor: kBackgroundColor,
-        textTheme: Theme.of(context).textTheme.apply(displayColor: kTextColor),
-      ),
-      home: LoginPage(),
-    );
+        debugShowCheckedModeBanner: false,
+        title: 'Gardenio',
+        theme: ThemeData(
+          fontFamily: "Poppins",
+          scaffoldBackgroundColor: kBackgroundColor,
+          textTheme:
+              Theme.of(context).textTheme.apply(displayColor: kTextColor),
+        ),
+        home: LoginPage(),
+        routes: {
+          '/login': (context) => LoginPage(),
+          '/register': (context) => RegisterPage(),
+        });
   }
 }

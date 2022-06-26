@@ -37,6 +37,8 @@ dependencies:
   animated_widgets: ^1.0.6
   provider: ^5.0.0
   uuid: ^3.0.4
+  date_format: ^1.0.6
+  http: ^0.13.3
 
 
 
