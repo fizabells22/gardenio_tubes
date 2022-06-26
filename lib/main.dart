@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gardenio_tubes/constants.dart';
+import 'package:gardenio_tubes/pages/add_plants/datetime.dart';
+import 'package:gardenio_tubes/pages/add_plants/entry_form.dart';
+import 'package:gardenio_tubes/pages/add_plants/time.dart';
 import 'package:gardenio_tubes/pages/login_page.dart';
 import 'package:gardenio_tubes/pages/first_screen.dart';
 import 'package:gardenio_tubes/pages/news_page/categories_news.dart';
@@ -28,7 +31,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: kBackgroundColor,
         textTheme: Theme.of(context).textTheme.apply(displayColor: kTextColor),
       ),
-      home: HomeScreen(),
+      home: LoginPage(),
     );
   }
 }
