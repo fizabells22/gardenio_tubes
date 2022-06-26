@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gardenio_tubes/pages/add_plants/plants_page.dart';
-import 'package:gardenio_tubes/pages/news_page/categories_news.dart';
 import 'package:gardenio_tubes/pages/recom_page.dart';
 import 'package:gardenio_tubes/screens/detail_screen.dart';
 import 'package:gardenio_tubes/screens/home_screen.dart';
